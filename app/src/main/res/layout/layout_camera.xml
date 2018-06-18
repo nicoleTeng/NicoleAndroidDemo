@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <Button 
+        android:id="@+id/start_system_camera_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/start_system_camera"/>
+    
+    <Button 
+        android:id="@+id/start_custom_camera_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dip"
+        android:text="@string/start_custom_camera"/>
+    
+    <ImageView 
+        android:id="@+id/imageview_id"
+        android:layout_width="300dip"
+        android:layout_height="300dip"
+        android:layout_marginTop="20dip"
+        android:layout_gravity="center_horizontal" />
+
+</LinearLayout>

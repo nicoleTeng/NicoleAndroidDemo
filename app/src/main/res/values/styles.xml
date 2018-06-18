@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <style name="com.txh.seekbar" parent="@android:style/Widget.SeekBar">
+        <item name="android:progressDrawable">@drawable/progress_vertical</item>
+    </style>
+    
+    <style name="common_ui_divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">2px</item>
+        <item name="android:background">@color/gray</item>
+    </style>
+    
+    <style name="DialogStyle" parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.65</item>
+    </style>
+    
+    <style name="nicole_demo_style" parent="@android:style/Theme.Holo.Light">
+        <!-- <item name="android:windowFullscreen">true</item>
+        <item name="android:background">@android:color/holo_green_light</item> -->
+    </style>
+</resources>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+	<com.example.bitmap.ImageXfermode
+	    android:id="@+id/imageview_id"
+	    android:layout_width="300dip"
+	    android:layout_height="300dip"
+	    android:layout_below="@id/save_id"
+	    android:layout_centerHorizontal="true"
+	    android:layout_marginTop="10dip"
+	    android:background="@drawable/round_rectangle_white" />
+	
+	<LinearLayout
+	    android:id="@+id/style_id_2"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentBottom="true"
+	    android:orientation="horizontal"
+	    android:weightSum="5" >
+	    
+	    <Button
+	        android:id="@+id/style_6"
+	    	android:layout_width="wrap_content"
+	   		android:layout_height="wrap_content"
+	   		android:layout_weight="1"
+	   		android:tag="6"
+	   		android:text="XOR" />
+	    
+	    <Button
+	        android:id="@+id/style_7"
+	    	android:layout_width="wrap_content"
+	   		android:layout_height="wrap_content"
+	   		android:layout_weight="1"
+	   		android:tag="7"
+	   		android:text="DST_IN" />
+	    
+	    <Button
+	        android:id="@+id/style_8"
+	    	android:layout_width="wrap_content"
+	   		android:layout_height="wrap_content"
+	   		android:layout_weight="1"
+	   		android:tag="8"
+	   		android:text="DST_OUT" />
+	    
+	    <Button
+	        android:id="@+id/style_9"
+	    	android:layout_width="wrap_content"
+	   		android:layout_height="wrap_content"
+	   		android:layout_weight="1"
+	   		android:tag="9"
+	   		android:text="MULTIPLY" />
+	    
+	    <Button
+	        android:id="@+id/style_10"
+	    	android:layout_width="wrap_content"
+	   		android:layout_height="wrap_content"
+	   		android:layout_weight="1"
+	   		android:tag="10"
+	   		android:text="SCREEN" />
+	</LinearLayout>
+	
+	<LinearLayout
+	    android:id="@+id/style_id_1"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_above="@id/style_id_2"
+	    android:orientation="horizontal"
+	    android:weightSum="5" >
+	    
+	    <Button
+	        android:id="@+id/style_1"
+	    	android:layout_width="wrap_content"
+	   		android:layout_height="wrap_content"
+	   		android:layout_weight="1"
+	   		android:tag="1"
+	   		android:text="CLEAR" />
+	    
+	    <Button
+	        android:id="@+id/style_2"
+	    	android:layout_width="wrap_content"
+	   		android:layout_height="wrap_content"
+	   		android:layout_weight="1"
+	   		android:tag="2"
+	   		android:text="SRC" />
+	    
+	    <Button
+	        android:id="@+id/style_3"
+	    	android:layout_width="wrap_content"
+	   		android:layout_height="wrap_content"
+	   		android:layout_weight="1"
+	   		android:tag="3"
+	   		android:text="DST" />
+	    
+	    <Button
+	        android:id="@+id/style_4"
+	    	android:layout_width="wrap_content"
+	   		android:layout_height="wrap_content"
+	   		android:layout_weight="1"
+	   		android:tag="4"
+	   		android:text="SRC_IN" />
+	    
+	    <Button
+	        android:id="@+id/style_5"
+	    	android:layout_width="wrap_content"
+	   		android:layout_height="wrap_content"
+	   		android:layout_weight="1"
+	   		android:tag="5"
+	   		android:text="SRC_OUT" />
+	</LinearLayout>
+	
+</RelativeLayout>

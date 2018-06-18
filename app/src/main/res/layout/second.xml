@@ -1,0 +1,57 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/secondapp" />
+    
+    <TextView
+        android:id="@+id/task_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dip" />
+    
+    <com.example.app.VerticalSeekBar
+        android:layout_width="wrap_content"
+        android:layout_height="180dip"
+        android:layout_marginLeft="50dip"
+        android:visibility="gone" />
+    
+    <com.example.app.MyVerticalSeekBar 
+        android:layout_width="40dip"
+        android:layout_height="200dip"
+        android:layout_marginTop="20dip"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:background="@android:color/background_light" />
+    
+    <com.example.app.MoveImageView
+        android:id="@+id/move_view_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dip"
+        android:src="@drawable/ic_launcher" />
+    
+    <Button
+        android:id="@+id/move_button_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dip"
+        android:text="@string/move_image_view"/>
+    
+    <Button
+        android:id="@+id/move_handle_button_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dip"
+        android:text="@string/move_handle_image_view"/>
+
+</LinearLayout>

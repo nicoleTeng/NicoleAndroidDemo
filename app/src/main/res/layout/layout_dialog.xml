@@ -1,0 +1,62 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical" >
+	    
+	    <TextView
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="20dip"
+	        android:text="@string/firstapp" />
+	    
+	    <TextView
+	        android:id="@+id/task_id"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="20dip" />
+	    
+	    <Button
+	        android:id="@+id/show_system_dialog"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="20dip"
+	        android:text="@string/show_system_dialog" />
+	    
+	    <Button
+	        android:id="@+id/show_custom_dialog"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="20dip"
+	        android:text="@string/show_custom_dialog" />
+	    
+	    <Button
+	        android:id="@+id/move_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="20dip"
+	        android:text="@string/move_button" />
+	    
+	    <Button
+	        android:id="@+id/notify_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="20dip"
+	        android:text="@string/notify_button" />
+	    
+	    <Button
+	        android:id="@+id/heap_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="20dip"
+	        android:text="@string/heap_button" />
+	    
+	    <include layout="@layout/improve_custom_actionbar_done"/>
+
+	</LinearLayout>
+
+</ScrollView>

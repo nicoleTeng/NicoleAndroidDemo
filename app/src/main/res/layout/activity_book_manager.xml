@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <TextView
+        android:id="@+id/textView_id"
+        android:layout_width="500dip"
+        android:layout_height="100dip"
+        android:scrollHorizontally="true"
+        android:ellipsize="marquee"
+        android:singleLine="true"
+        android:focusable="true"
+		android:focusableInTouchMode="true" />"
+    
+    <TextView
+        android:id="@+id/new_textView_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dip" />
+    
+    <Button
+        android:id="@+id/get_booklist_id"
+        android:layout_width="match_parent"
+        android:layout_height="100dip"
+        android:layout_marginTop="20dip"
+        android:text="@string/get_booklist_id" />
+
+
+</LinearLayout>

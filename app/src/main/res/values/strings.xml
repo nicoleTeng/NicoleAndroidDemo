@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">appA</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="firstapp">this is appA first activity</string>
+    <string name="secondapp">this is appA second activity</string>
+    <string name="move_image_view">scroll image view</string>
+    <string name="move_handle_image_view">move image view by handler</string>
+    <string name="show_system_dialog">show system dialog</string>
+    <string name="show_custom_dialog">show custom dialog</string>
+    <string name="go_to_appB_second">go to default View</string>
+    <string name="go_to_provider_activity">go to ProviderActivity</string>
+    <string name="go_to_tcp_client">go to TCPClientActivity</string>
+    <string name="go_to_bookmanager_activity">go to BookManagerActivity</string>
+    <string name="get_booklist_id">get booklist</string>
+    <string name="providerapp">Provider Application</string>
+    <string name="move_button">move button</string>
+    <string name="notify_button">\&#34;notify button\&#34;</string>
+    <string name="heap_button">allocate 100M heap</string>
+    <string name="thread_button">thread button</string>
+    <string name="bitmap_button">bitmap button</string>
+    <string name="gallery_button">gallery button</string>
+    <string name="expose_button">double exposure</string>
+    <string name="draw">draw</string>
+    <string name="xfermode">Xfermode</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>
+    <string name="crop_label">move and crop</string>
+    <string name="crop_save_text">done</string>
+    <string name="message">1.this is a long message,this is a long message,this is a long message,this is a long message,this is a long message,
+        \n2.this is a long message,this is a long message,this is a long message,this is a long message,this is a long message,\n
+        3.this is a long message,this is a long message,this is a long message,this is a long message,this is a long message,\n
+        4. this is a long message,this is a long message,this is a long message,this is a long message,this is a long message,
+        5. this is a long message,this is a long message,this is a long message,this is a long message,this is a long message,</string>
+    <string name="send">Send</string>
+    
+    <string name="imagedescription">image</string>
+    <string name="cannotfindsd">can not find SD</string>
+    <string name="emptyfolder">empty folder</string>
+    <string name="exitprompt">press back again for exit</string>
+    <string name="notenoughspaceprompt">insufficient disk space 100M, can not start recored</string>
+    <string name="recordexceptionprompt">record exception occurs, try modify configuration</string>
+    <string name="capturefinish">capture finish</string>
+    <string name="opencamerafailedprmopt">open camera failed, try restart devices</string>
+    <string name="findnewversionprompt">new version available, click for download</string>
+    <string name="updating">updating</string>
+    <string name="setupapp">download finished, click for setup</string>
+    <string name="defaultstring">default</string>
+    <string name="currendversion">current version</string>
+    <string name="configuration">configuration</string>
+    <string name="modeselect">mode select</string>
+    <string name="modeselectsummary">select video mode or picture mode</string>
+    <string name="videoconfig">video config</string>
+    <string name="videoconfigprompt">set video parameter</string>
+    <string name="videoresolution">video resolution</string>
+    <string name="videoresolutionprompt">set video resolution</string>
+    <string name="videorecycle">number of video recycle</string>
+    <string name="videorecycleprompt">set number of video recycle</string>
+    <string name="videolength">video length</string>
+    <string name="videolengthprompt">set video length</string>
+    <string name="videofilesavepath">path of video file</string>
+    <string name="pictureconfig">picture config</string>
+    <string name="pictureconfigprompt">set take picture config</string>
+    <string name="picturetakeinterval">interval of take picture</string>
+    <string name="picturetakeintervalprompt">set intervale of take picture</string>
+    <string name="pictureresolution">picture resolution</string>
+    <string name="pictureresolutionprompt">set picture resolution</string>
+    <string name="picturelast">take picture last</string>
+    <string name="picturelastprompt">set take picture last</string>
+    <string name="picturefilesavepath">path of picture file</string>
+    <string name="appversion">app version</string>
+    <string name="aboutapp">about app</string>
+    <string name="aboutappprompt">app instruction and QA</string>
+    <string name="ellipsis">...</string>
+    <string name="normal_test">abcdefghijklmnopqrst</string>
+    <string name="aperture_adjust">Blur Adjustment for Background abcdefghijklmnopqrst</string>
+    <string name="save">save</string>
+</resources>
