@@ -38,6 +38,7 @@ import com.example.leetCode.LeetCodeActivity;
 import com.example.network.JsonActivity;
 import com.example.network.TCPClientActivity;
 import com.example.provider.ProviderActivity;
+import com.example.recyclerview.RecyclerActivity;
 import com.example.service.ServiceActivity;
 import com.example.thread.HandlerActivity;
 import com.example.thread.ThreadActivity;
@@ -80,7 +81,8 @@ public class MainActivity extends ListActivity {
         "Start Camera",
         "Service Demo",
         "LeeCode",
-        "MessengerActivity"
+        "MessengerActivity",
+            "RecyclerActivity"
     };
     
     static final Class<?>[] activities = {
@@ -109,7 +111,8 @@ public class MainActivity extends ListActivity {
         CameraActivity.class,
         ServiceActivity.class,
         LeetCodeActivity.class,
-        MessengerActivity.class
+        MessengerActivity.class,
+            RecyclerActivity.class
     };
 
     @Override
@@ -217,8 +220,8 @@ public class MainActivity extends ListActivity {
         Intent intent = new Intent(Intent.ACTION_SEND);
 
         intent.setType("image/*");     
-        intent.putExtra(Intent.EXTRA_SUBJECT, "·ÖÏí");     
-        intent.putExtra(Intent.EXTRA_TEXT, "ÖÕÓÚ¿ÉÒÔÁË!!!");      
+        intent.putExtra(Intent.EXTRA_SUBJECT, "ï¿½ï¿½ï¿½ï¿½");     
+        intent.putExtra(Intent.EXTRA_TEXT, "ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ï¿½ï¿½!!!");      
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
         startActivity(Intent.createChooser(intent, getTitle()));
@@ -257,18 +260,18 @@ public class MainActivity extends ListActivity {
     
     void testArrayToList() {
         int[] a_int = { 1, 2, 3, 4 };  
-        /* Ô¤ÆÚÊä³öÓ¦¸ÃÊÇ1,2,3,4,µ«Êµ¼ÊÉÏÊä³öµÄ½ö½öÊÇÒ»¸öÒýÓÃ, ÕâÀïËü°Ña_intµ±³ÉÁËÒ»¸öÔªËØ */  
+        /* Ô¤ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½1,2,3,4,ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½a_intï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ôªï¿½ï¿½ */  
         List a_int_List = Arrays.asList(a_int);  
         foreach(a_int_List);  
-        /* Îª´ËÎÒÃÇÐèÒªÕâÑù±éÀúÆäÖÐÔªËØ */  
+        /* Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½ */  
         foreachForBase(a_int_List);  
   
-        /* ¶ÎÂä¶þ:¶ÔÏóÀàÐÍµÄÊý×éÊ¹ÓÃasList,ÊÇÎÒÃÇÔ¤ÆÚµÄ */  
+        /* ï¿½ï¿½ï¿½ï¿½ï¿½:ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Íµï¿½ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½asList,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½Úµï¿½ */  
         Integer[] a_Integer = new Integer[] { 1, 2, 3, 4 };  
         List a_Integer_List = Arrays.asList(a_Integer);  
         foreach(a_Integer_List);  
   
-        /* ¶ÎÂäÈý:µ±¸üÐÂÊý×é»òÕßasListÖ®ºóµÄList,ÁíÒ»¸ö½«×Ô¶¯»ñµÃ¸üÐÂ */  
+        /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½asListÖ®ï¿½ï¿½ï¿½List,ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½Ã¸ï¿½ï¿½ï¿½ */  
         a_Integer_List.set(0, 0);  
         foreach(a_Integer_List);  
         foreach(a_Integer);  
@@ -277,8 +280,8 @@ public class MainActivity extends ListActivity {
         foreach(a_Integer_List);  
         foreach(a_Integer);  
   
-        /* ¶ÎÂäËÄ:¶Ô»ù±¾ÀàÐÍÊý×é,Í¨¹ýasListÖ®ºóµÄListÐÞ¸Ä¶ÔÓ¦µÄÖµºó,ÔÚÔËÐÐÊ±»á±¨³öÒì³£  
-         * µ«ÊÇ»ù±¾ÀàÐÍÊý×é¶ÔÓ¦µÄListÊÇ»á·¢Éú±ä»¯µÄ,ÕâÊÇºÁÎÞÒÉÎÊµÄ 
+        /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:ï¿½Ô»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,Í¨ï¿½ï¿½asListÖ®ï¿½ï¿½ï¿½Listï¿½Þ¸Ä¶ï¿½Ó¦ï¿½ï¿½Öµï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½á±¨ï¿½ï¿½ï¿½ì³£  
+         * ï¿½ï¿½ï¿½Ç»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½Listï¿½Ç»á·¢ï¿½ï¿½ï¿½ä»¯ï¿½ï¿½,ï¿½ï¿½ï¿½Çºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ 
          */  
           
         /* 
@@ -292,7 +295,7 @@ public class MainActivity extends ListActivity {
   
     }  
   
-    /* ´òÓ¡·½·¨ */  
+    /* ï¿½ï¿½Ó¡ï¿½ï¿½ï¿½ï¿½ */  
     private static void foreach(List list) {  
         for (Object object : list) {  
             System.out.print(object + " ");  

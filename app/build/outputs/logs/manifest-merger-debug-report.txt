@@ -1,11 +1,12 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\nicole\AndroidStudioProjects\NicoleAndroidDemo\app\src\main\AndroidManifest.xml:2:1-206:12
-INJECTED from C:\Users\nicole\AndroidStudioProjects\NicoleAndroidDemo\app\src\main\AndroidManifest.xml:2:1-206:12
-INJECTED from C:\Users\nicole\AndroidStudioProjects\NicoleAndroidDemo\app\src\main\AndroidManifest.xml:2:1-206:12
-INJECTED from C:\Users\nicole\AndroidStudioProjects\NicoleAndroidDemo\app\src\main\AndroidManifest.xml:2:1-206:12
+ADDED from C:\Users\nicole\AndroidStudioProjects\NicoleAndroidDemo\app\src\main\AndroidManifest.xml:2:1-208:12
+INJECTED from C:\Users\nicole\AndroidStudioProjects\NicoleAndroidDemo\app\src\main\AndroidManifest.xml:2:1-208:12
+INJECTED from C:\Users\nicole\AndroidStudioProjects\NicoleAndroidDemo\app\src\main\AndroidManifest.xml:2:1-208:12
+INJECTED from C:\Users\nicole\AndroidStudioProjects\NicoleAndroidDemo\app\src\main\AndroidManifest.xml:2:1-208:12
 MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\nicole\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.3.1.aar\36e2baae1bb62ad90cae66e0600cd8f2\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-v4:25.3.1] C:\Users\nicole\.gradle\caches\transforms-1\files-1.1\support-v4-25.3.1.aar\c1a50fb439f4bb9321e7feb950c9d2e6\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\nicole\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-25.3.1.aar\37773b359155c50a260001dee72d3c10\AndroidManifest.xml:17:1-26:12
 MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\nicole\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.3.1.aar\596a584101452e4c10923629a15d49bf\AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\nicole\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.3.1.aar\97320aff0d32dc6c66f747aacf89d7e4\AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\nicole\.gradle\caches\transforms-1\files-1.1\support-fragment-25.3.1.aar\54867a9b143deb09ba710e0b605a6e9b\AndroidManifest.xml:17:1-31:12
@@ -13,9 +14,9 @@ MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\nicole\.g
 MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\nicole\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.3.1.aar\6ecde8d88bac1f1b3c5ce8cac180100c\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\nicole\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.3.1.aar\65925eb0ed54e904c09fb210639c4656\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-compat:25.3.1] C:\Users\nicole\.gradle\caches\transforms-1\files-1.1\support-compat-25.3.1.aar\2249991ff909c93f79c9201c23d195b1\AndroidManifest.xml:17:1-31:12
-INJECTED from C:\Users\nicole\AndroidStudioProjects\NicoleAndroidDemo\app\src\main\AndroidManifest.xml:2:1-206:12
-INJECTED from C:\Users\nicole\AndroidStudioProjects\NicoleAndroidDemo\app\src\main\AndroidManifest.xml:2:1-206:12
-INJECTED from C:\Users\nicole\AndroidStudioProjects\NicoleAndroidDemo\app\src\main\AndroidManifest.xml:2:1-206:12
+INJECTED from C:\Users\nicole\AndroidStudioProjects\NicoleAndroidDemo\app\src\main\AndroidManifest.xml:2:1-208:12
+INJECTED from C:\Users\nicole\AndroidStudioProjects\NicoleAndroidDemo\app\src\main\AndroidManifest.xml:2:1-208:12
+INJECTED from C:\Users\nicole\AndroidStudioProjects\NicoleAndroidDemo\app\src\main\AndroidManifest.xml:2:1-208:12
 	package
 		ADDED from C:\Users\nicole\AndroidStudioProjects\NicoleAndroidDemo\app\src\main\AndroidManifest.xml:3:5-33
 		INJECTED from C:\Users\nicole\AndroidStudioProjects\NicoleAndroidDemo\app\src\main\AndroidManifest.xml
@@ -38,6 +39,8 @@ MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\nicole\.gradle\ca
 MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\nicole\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.3.1.aar\36e2baae1bb62ad90cae66e0600cd8f2\AndroidManifest.xml:21:5-23:78
 MERGED from [com.android.support:support-v4:25.3.1] C:\Users\nicole\.gradle\caches\transforms-1\files-1.1\support-v4-25.3.1.aar\c1a50fb439f4bb9321e7feb950c9d2e6\AndroidManifest.xml:21:5-23:54
 MERGED from [com.android.support:support-v4:25.3.1] C:\Users\nicole\.gradle\caches\transforms-1\files-1.1\support-v4-25.3.1.aar\c1a50fb439f4bb9321e7feb950c9d2e6\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\nicole\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-25.3.1.aar\37773b359155c50a260001dee72d3c10\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\nicole\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-25.3.1.aar\37773b359155c50a260001dee72d3c10\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\nicole\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.3.1.aar\596a584101452e4c10923629a15d49bf\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\nicole\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.3.1.aar\596a584101452e4c10923629a15d49bf\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\nicole\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.3.1.aar\97320aff0d32dc6c66f747aacf89d7e4\AndroidManifest.xml:20:5-43
@@ -103,7 +106,7 @@ ADDED from C:\Users\nicole\AndroidStudioProjects\NicoleAndroidDemo\app\src\main\
 	android:name
 		ADDED from C:\Users\nicole\AndroidStudioProjects\NicoleAndroidDemo\app\src\main\AndroidManifest.xml:21:6-68
 application
-ADDED from C:\Users\nicole\AndroidStudioProjects\NicoleAndroidDemo\app\src\main\AndroidManifest.xml:24:5-204:19
+ADDED from C:\Users\nicole\AndroidStudioProjects\NicoleAndroidDemo\app\src\main\AndroidManifest.xml:24:5-206:19
 MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\nicole\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.3.1.aar\36e2baae1bb62ad90cae66e0600cd8f2\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\nicole\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.3.1.aar\36e2baae1bb62ad90cae66e0600cd8f2\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-v4:25.3.1] C:\Users\nicole\.gradle\caches\transforms-1\files-1.1\support-v4-25.3.1.aar\c1a50fb439f4bb9321e7feb950c9d2e6\AndroidManifest.xml:29:5-20
@@ -352,16 +355,22 @@ activity#com.example.app.HandlerThreadActivity
 ADDED from C:\Users\nicole\AndroidStudioProjects\NicoleAndroidDemo\app\src\main\AndroidManifest.xml:198:9-74
 	android:name
 		ADDED from C:\Users\nicole\AndroidStudioProjects\NicoleAndroidDemo\app\src\main\AndroidManifest.xml:198:19-71
-service#com.example.aidl.MessengerService
-ADDED from C:\Users\nicole\AndroidStudioProjects\NicoleAndroidDemo\app\src\main\AndroidManifest.xml:200:9-202:41
-	android:process
-		ADDED from C:\Users\nicole\AndroidStudioProjects\NicoleAndroidDemo\app\src\main\AndroidManifest.xml:202:13-38
+activity#com.example.recyclerview.RecyclerActivity
+ADDED from C:\Users\nicole\AndroidStudioProjects\NicoleAndroidDemo\app\src\main\AndroidManifest.xml:200:3-72
 	android:name
-		ADDED from C:\Users\nicole\AndroidStudioProjects\NicoleAndroidDemo\app\src\main\AndroidManifest.xml:201:13-61
+		ADDED from C:\Users\nicole\AndroidStudioProjects\NicoleAndroidDemo\app\src\main\AndroidManifest.xml:200:13-69
+service#com.example.aidl.MessengerService
+ADDED from C:\Users\nicole\AndroidStudioProjects\NicoleAndroidDemo\app\src\main\AndroidManifest.xml:202:9-204:41
+	android:process
+		ADDED from C:\Users\nicole\AndroidStudioProjects\NicoleAndroidDemo\app\src\main\AndroidManifest.xml:204:13-38
+	android:name
+		ADDED from C:\Users\nicole\AndroidStudioProjects\NicoleAndroidDemo\app\src\main\AndroidManifest.xml:203:13-61
 meta-data#android.support.VERSION
 ADDED from [com.android.support:appcompat-v7:25.3.1] C:\Users\nicole\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.3.1.aar\36e2baae1bb62ad90cae66e0600cd8f2\AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:support-v4:25.3.1] C:\Users\nicole\.gradle\caches\transforms-1\files-1.1\support-v4-25.3.1.aar\c1a50fb439f4bb9321e7feb950c9d2e6\AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:support-v4:25.3.1] C:\Users\nicole\.gradle\caches\transforms-1\files-1.1\support-v4-25.3.1.aar\c1a50fb439f4bb9321e7feb950c9d2e6\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\nicole\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-25.3.1.aar\37773b359155c50a260001dee72d3c10\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\nicole\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-25.3.1.aar\37773b359155c50a260001dee72d3c10\AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\nicole\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.3.1.aar\596a584101452e4c10923629a15d49bf\AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\nicole\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.3.1.aar\596a584101452e4c10923629a15d49bf\AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\nicole\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.3.1.aar\97320aff0d32dc6c66f747aacf89d7e4\AndroidManifest.xml:22:5-24:34

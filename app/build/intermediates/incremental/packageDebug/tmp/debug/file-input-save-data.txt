@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Mon Jun 18 11:07:13 CST 2018
+#Mon Jun 18 12:45:57 CST 2018
 4.path=bubble/00002/qipao.png
 8.set=DEX
 6.path=classes.dex

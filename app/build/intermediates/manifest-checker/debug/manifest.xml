@@ -176,6 +176,7 @@
         <activity android:name="com.example.aidl.MessengerActivity" />
         <activity android:name="com.example.app.LayoutWeightActivity" />
         <activity android:name="com.example.app.HandlerThreadActivity" />
+        <activity android:name="com.example.recyclerview.RecyclerActivity" />
 
         <service
             android:name="com.example.aidl.MessengerService"
