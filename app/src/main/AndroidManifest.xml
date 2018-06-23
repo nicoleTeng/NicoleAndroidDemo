@@ -201,6 +201,8 @@
 
 		<activity android:name="com.example.app.CustomViewActivity" />
 
+		<activity android:name="com.example.animation.AnimationActivity" />
+
         <service
             android:name="com.example.aidl.MessengerService"
             android:process=":remote" />

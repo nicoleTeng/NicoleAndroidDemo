@@ -29,6 +29,7 @@ import android.widget.ListView;
 import com.example.aidl.Book;
 import com.example.aidl.BookManagerActivity;
 import com.example.aidl.MessengerActivity;
+import com.example.animation.AnimationActivity;
 import com.example.bitmap.AsyncTaskActivity;
 import com.example.bitmap.DoubleExposureActivity;
 import com.example.bitmap.XfermodeActivity;
@@ -83,7 +84,8 @@ public class MainActivity extends ListActivity {
         "LeeCode",
         "MessengerActivity",
             "RecyclerActivity",
-            "Custom View"
+            "Custom View",
+            "Animation"
     };
     
     static final Class<?>[] activities = {
@@ -114,7 +116,8 @@ public class MainActivity extends ListActivity {
         LeetCodeActivity.class,
         MessengerActivity.class,
             RecyclerActivity.class,
-            CustomViewActivity.class
+            CustomViewActivity.class,
+            AnimationActivity.class
     };
 
     @Override
