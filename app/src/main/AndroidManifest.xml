@@ -199,6 +199,8 @@
 
 		<activity android:name="com.example.recyclerview.RecyclerActivity" />
 
+		<activity android:name="com.example.app.CustomViewActivity" />
+
         <service
             android:name="com.example.aidl.MessengerService"
             android:process=":remote" />
