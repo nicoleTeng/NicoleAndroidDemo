@@ -82,7 +82,8 @@ public class MainActivity extends ListActivity {
         "Service Demo",
         "LeeCode",
         "MessengerActivity",
-            "RecyclerActivity"
+            "RecyclerActivity",
+            "Custom View"
     };
     
     static final Class<?>[] activities = {
@@ -112,7 +113,8 @@ public class MainActivity extends ListActivity {
         ServiceActivity.class,
         LeetCodeActivity.class,
         MessengerActivity.class,
-            RecyclerActivity.class
+            RecyclerActivity.class,
+            CustomViewActivity.class
     };
 
     @Override
