@@ -126,11 +126,9 @@ public class Utils {
      * get StatusBar's Height
      */
     public static int getStatusBarHeight(Context context) {
-        int statusBarHeight = -1;  
-        //获取status_bar_height资源的ID  
+        int statusBarHeight = -1;
         int resourceId = context.getResources().getIdentifier("status_bar_height", "dimen", "android");  
-        if (resourceId > 0) {  
-            //根据资源ID获取响应的尺寸值  
+        if (resourceId > 0) {
             statusBarHeight = context.getResources().getDimensionPixelSize(resourceId);  
         }
         Log.e(TAG, "txh getStatusBarHeight = " + statusBarHeight);

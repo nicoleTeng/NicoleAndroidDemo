@@ -6,9 +6,11 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import android.content.Context;
+import android.os.Environment;
+import android.util.Log;
 import android.widget.Toast;
 
-public class MediaFileUtils {
+public class FileUtils {
     private static final String JPG_HEX = "ff";  
     private static final String PNG_HEX = "89";  
     private static final String JPG_EXT = "jpg";  
@@ -44,5 +46,20 @@ public class MediaFileUtils {
         }  
         return extension;  
     }
-    
+
+    /*
+     * dirPath = Environment.getExternalStorageDirectory().getPath();
+     */
+    public static void createFile(String dirPath, String name) {
+        String path = dirPath + "/Pictures/Screenshots";
+        File file = new File(path, name);
+        if (!file.exists()) {
+            try {
+                file.createNewFile();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
 }

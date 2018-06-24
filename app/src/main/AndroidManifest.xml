@@ -203,7 +203,10 @@
 
 		<activity android:name="com.example.animation.AnimationActivity" />
 
-        <service
+		<activity android:name="com.example.activity.SecondActivity" />
+
+
+		<service
             android:name="com.example.aidl.MessengerService"
             android:process=":remote" />
         

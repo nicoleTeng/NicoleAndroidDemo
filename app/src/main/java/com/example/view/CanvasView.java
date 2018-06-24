@@ -3,7 +3,6 @@ package com.example.view;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.app.ActivityManager;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
@@ -24,11 +23,9 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Toast;
 
 import com.example.nicole.R;
 import com.example.bitmap.BitmapUtils;
-import com.example.util.MediaFileUtils;
 import com.example.util.Utils;
 
 public class CanvasView extends View {
@@ -243,28 +240,28 @@ public class CanvasView extends View {
         mPaint.setStrokeCap(Paint.Cap.ROUND);
         mPaint.setStrokeWidth(6 * mDensity);
 
-        //ÓÃÂÌÉ«»­xÖá£¬ÓÃÀ¶É«»­yÖá
+        //ï¿½ï¿½ï¿½ï¿½É«ï¿½ï¿½xï¿½á£¬ï¿½ï¿½ï¿½ï¿½É«ï¿½ï¿½yï¿½ï¿½
 
-        //µÚÒ»´Î»æÖÆ×ø±êÖá
-        mPaint.setColor(0xff00ff00);//ÂÌÉ«
-        canvas.drawLine(0, 0, canvasWidth, 0, mPaint);//»æÖÆxÖá
-        mPaint.setColor(0xff0000ff);//À¶É«
-        canvas.drawLine(0, 0, 0, canvasHeight, mPaint);//»æÖÆyÖá
+        //ï¿½ï¿½Ò»ï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        mPaint.setColor(0xff00ff00);//ï¿½ï¿½É«
+        canvas.drawLine(0, 0, canvasWidth, 0, mPaint);//ï¿½ï¿½ï¿½ï¿½xï¿½ï¿½
+        mPaint.setColor(0xff0000ff);//ï¿½ï¿½É«
+        canvas.drawLine(0, 0, 0, canvasHeight, mPaint);//ï¿½ï¿½ï¿½ï¿½yï¿½ï¿½
 
-        //¶Ô×ø±êÏµÆ½ÒÆºó£¬µÚ¶þ´Î»æÖÆ×ø±êÖá
-        canvas.translate(canvasWidth / 4, canvasWidth /4);//°Ñ×ø±êÏµÏòÓÒÏÂ½ÇÆ½ÒÆ
-        mPaint.setColor(0xff00ff00);//ÂÌÉ«
-        canvas.drawLine(0, 0, canvasWidth, 0, mPaint);//»æÖÆxÖá
-        mPaint.setColor(0xff0000ff);//À¶É«
-        canvas.drawLine(0, 0, 0, canvasHeight, mPaint);//»æÖÆyÖá
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÏµÆ½ï¿½Æºó£¬µÚ¶ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        canvas.translate(canvasWidth / 4, canvasWidth /4);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½ï¿½Â½ï¿½Æ½ï¿½ï¿½
+        mPaint.setColor(0xff00ff00);//ï¿½ï¿½É«
+        canvas.drawLine(0, 0, canvasWidth, 0, mPaint);//ï¿½ï¿½ï¿½ï¿½xï¿½ï¿½
+        mPaint.setColor(0xff0000ff);//ï¿½ï¿½É«
+        canvas.drawLine(0, 0, 0, canvasHeight, mPaint);//ï¿½ï¿½ï¿½ï¿½yï¿½ï¿½
 
-        //ÔÙ´ÎÆ½ÒÆ×ø±êÏµ²¢ÔÚ´Ë»ù´¡ÉÏÐý×ª×ø±êÏµ£¬µÚÈý´Î»æÖÆ×ø±êÖá
-        canvas.translate(canvasWidth / 4, canvasWidth / 4);//ÔÚÉÏ´ÎÆ½ÒÆµÄ»ù´¡ÉÏÔÙ°Ñ×ø±êÏµÏòÓÒÏÂ½ÇÆ½ÒÆ
-        canvas.rotate(30);//»ùÓÚµ±Ç°»æÍ¼×ø±êÏµµÄÔ­µãÐý×ª×ø±êÏµ
-        mPaint.setColor(0xff00ff00);//ÂÌÉ«
-        canvas.drawLine(0, 0, canvasWidth, 0, mPaint);//»æÖÆxÖá
-        mPaint.setColor(0xff0000ff);//À¶É«
-        canvas.drawLine(0, 0, 0, canvasHeight, mPaint);//»æÖÆyÖá
+        //ï¿½Ù´ï¿½Æ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½Ú´Ë»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        canvas.translate(canvasWidth / 4, canvasWidth / 4);//ï¿½ï¿½ï¿½Ï´ï¿½Æ½ï¿½ÆµÄ»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù°ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½ï¿½Â½ï¿½Æ½ï¿½ï¿½
+        canvas.rotate(30);//ï¿½ï¿½ï¿½Úµï¿½Ç°ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½Ô­ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½Ïµ
+        mPaint.setColor(0xff00ff00);//ï¿½ï¿½É«
+        canvas.drawLine(0, 0, canvasWidth, 0, mPaint);//ï¿½ï¿½ï¿½ï¿½xï¿½ï¿½
+        mPaint.setColor(0xff0000ff);//ï¿½ï¿½É«
+        canvas.drawLine(0, 0, 0, canvasHeight, mPaint);//ï¿½ï¿½ï¿½ï¿½yï¿½ï¿½
     }
 
     private void drawARGB(Canvas canvas) {
@@ -279,70 +276,70 @@ public class CanvasView extends View {
         
         mPaint.setTextSize(30);
 
-        //»æÖÆÕý³£ÎÄ±¾
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä±ï¿½
         canvas.save();
         canvas.translate(0, translateY);
-        canvas.drawText("Õý³£»æÖÆÎÄ±¾", 0, 0, mPaint);
+        canvas.drawText("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä±ï¿½", 0, 0, mPaint);
         canvas.restore();
         translateY += textHeight * 2;
 
-        //»æÖÆÂÌÉ«ÎÄ±¾
-        mPaint.setColor(0xff00ff00);//ÉèÖÃ×ÖÌåÎªÂÌÉ«
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«ï¿½Ä±ï¿½
+        mPaint.setColor(0xff00ff00);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½É«
         canvas.save();
-        canvas.translate(0, translateY);//½«»­±ÊÏòÏÂÒÆ¶¯
-        canvas.drawText("»æÖÆÂÌÉ«ÎÄ±¾", 0, 0, mPaint);
+        canvas.translate(0, translateY);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½
+        canvas.drawText("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«ï¿½Ä±ï¿½", 0, 0, mPaint);
         canvas.restore();
-        mPaint.setColor(0xff000000);//ÖØÐÂÉèÖÃÎªºÚÉ«
+        mPaint.setColor(0xff000000);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½É«
         translateY += textHeight * 2;
 
-        //ÉèÖÃ×ó¶ÔÆë
-        mPaint.setTextAlign(Paint.Align.LEFT);//ÉèÖÃ×ó¶ÔÆë
-        canvas.save();
-        canvas.translate(halfCanvasWidth, translateY);
-        canvas.drawText("×ó¶ÔÆëÎÄ±¾", 0, 0, mPaint);
-        canvas.restore();
-        translateY += textHeight * 2;
-
-        //ÉèÖÃ¾ÓÖÐ¶ÔÆë
-        mPaint.setTextAlign(Paint.Align.CENTER);//ÉèÖÃ¾ÓÖÐ¶ÔÆë
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        mPaint.setTextAlign(Paint.Align.LEFT);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         canvas.save();
         canvas.translate(halfCanvasWidth, translateY);
-        canvas.drawText("¾ÓÖÐ¶ÔÆëÎÄ±¾", 0, 0, mPaint);
+        canvas.drawText("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä±ï¿½", 0, 0, mPaint);
         canvas.restore();
         translateY += textHeight * 2;
 
-        //ÉèÖÃÓÒ¶ÔÆë
-        mPaint.setTextAlign(Paint.Align.RIGHT);//ÉèÖÃÓÒ¶ÔÆë
+        //ï¿½ï¿½ï¿½Ã¾ï¿½ï¿½Ð¶ï¿½ï¿½ï¿½
+        mPaint.setTextAlign(Paint.Align.CENTER);//ï¿½ï¿½ï¿½Ã¾ï¿½ï¿½Ð¶ï¿½ï¿½ï¿½
         canvas.save();
         canvas.translate(halfCanvasWidth, translateY);
-        canvas.drawText("ÓÒ¶ÔÆëÎÄ±¾", 0, 0, mPaint);
+        canvas.drawText("ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½Ä±ï¿½", 0, 0, mPaint);
         canvas.restore();
-        mPaint.setTextAlign(Paint.Align.LEFT);//ÖØÐÂÉèÖÃÎª×ó¶ÔÆë
         translateY += textHeight * 2;
 
-        //ÉèÖÃÏÂ»®Ïß
-        mPaint.setUnderlineText(true);//ÉèÖÃ¾ßÓÐÏÂ»®Ïß
+        //ï¿½ï¿½ï¿½ï¿½ï¿½Ò¶ï¿½ï¿½ï¿½
+        mPaint.setTextAlign(Paint.Align.RIGHT);//ï¿½ï¿½ï¿½ï¿½ï¿½Ò¶ï¿½ï¿½ï¿½
+        canvas.save();
+        canvas.translate(halfCanvasWidth, translateY);
+        canvas.drawText("ï¿½Ò¶ï¿½ï¿½ï¿½ï¿½Ä±ï¿½", 0, 0, mPaint);
+        canvas.restore();
+        mPaint.setTextAlign(Paint.Align.LEFT);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½
+        translateY += textHeight * 2;
+
+        //ï¿½ï¿½ï¿½ï¿½ï¿½Â»ï¿½ï¿½ï¿½
+        mPaint.setUnderlineText(true);//ï¿½ï¿½ï¿½Ã¾ï¿½ï¿½ï¿½ï¿½Â»ï¿½ï¿½ï¿½
         canvas.save();
         canvas.translate(0, translateY);
-        canvas.drawText("ÏÂ»®ÏßÎÄ±¾", 0, 0, mPaint);
+        canvas.drawText("ï¿½Â»ï¿½ï¿½ï¿½ï¿½Ä±ï¿½", 0, 0, mPaint);
         canvas.restore();
-        mPaint.setUnderlineText(false);//ÖØÐÂÉèÖÃÎªÃ»ÓÐÏÂ»®Ïß
+        mPaint.setUnderlineText(false);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÎªÃ»ï¿½ï¿½ï¿½Â»ï¿½ï¿½ï¿½
         translateY += textHeight * 2;
 
-        //»æÖÆ¼Ó´ÖÎÄ×Ö
-        mPaint.setFakeBoldText(true);//½«»­±ÊÉèÖÃÎª´ÖÌå
+        //ï¿½ï¿½ï¿½Æ¼Ó´ï¿½ï¿½ï¿½ï¿½ï¿½
+        mPaint.setFakeBoldText(true);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½
         canvas.save();
         canvas.translate(0, translateY);
-        canvas.drawText("´ÖÌåÎÄ±¾", 0, 0, mPaint);
+        canvas.drawText("ï¿½ï¿½ï¿½ï¿½ï¿½Ä±ï¿½", 0, 0, mPaint);
         canvas.restore();
-        mPaint.setFakeBoldText(false);//ÖØÐÂ½«»­±ÊÉèÖÃÎª·Ç´ÖÌå×´Ì¬
+        mPaint.setFakeBoldText(false);//ï¿½ï¿½ï¿½Â½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½Ç´ï¿½ï¿½ï¿½×´Ì¬
         translateY += textHeight * 2;
 
-        //ÎÄ±¾ÈÆ»æÖÆÆðµãË³Ê±ÕëÐý×ª
+        //ï¿½Ä±ï¿½ï¿½Æ»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë³Ê±ï¿½ï¿½ï¿½ï¿½×ª
         canvas.save();
         canvas.translate(0, translateY);
         canvas.rotate(20);
-        canvas.drawText("ÎÄ±¾ÈÆ»æÖÆÆðµãÐý×ª20¶È", 0, 0, mPaint);
+        canvas.drawText("ï¿½Ä±ï¿½ï¿½Æ»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ª20ï¿½ï¿½", 0, 0, mPaint);
         canvas.restore();
     }
     
@@ -352,19 +349,19 @@ public class CanvasView extends View {
         int x = canvasWidth / 2;
         int deltaY = canvasHeight / 3;
         int y = deltaY / 2;
-        mPaint.setColor(0xff8bc5ba); //ÉèÖÃÑÕÉ«
-        mPaint.setStrokeWidth(50 * mDensity); //ÉèÖÃÏß¿í£¬Èç¹û²»ÉèÖÃÏß¿í£¬ÎÞ·¨»æÖÆµã
+        mPaint.setColor(0xff8bc5ba); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«
+        mPaint.setStrokeWidth(50 * mDensity); //ï¿½ï¿½ï¿½ï¿½ï¿½ß¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß¿ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ï¿½Æµï¿½
 
-        //»æÖÆCapÎªBUTTµÄµã
+        //ï¿½ï¿½ï¿½ï¿½CapÎªBUTTï¿½Äµï¿½
         mPaint.setStrokeCap(Paint.Cap.BUTT);
         canvas.drawPoint(x, y, mPaint);
 
-        //»æÖÆCapÎªROUNDµÄµã
+        //ï¿½ï¿½ï¿½ï¿½CapÎªROUNDï¿½Äµï¿½
         canvas.translate(0, deltaY);
         mPaint.setStrokeCap(Paint.Cap.ROUND);
         canvas.drawPoint(x, y, mPaint);
 
-        //»æÖÆCapÎªSQUAREµÄµã
+        //ï¿½ï¿½ï¿½ï¿½CapÎªSQUAREï¿½Äµï¿½
         canvas.translate(0, deltaY);
         mPaint.setStrokeCap(Paint.Cap.SQUARE);
         canvas.drawPoint(x, y, mPaint);
@@ -374,8 +371,8 @@ public class CanvasView extends View {
         int canvasWidth = canvas.getWidth();
         int canvasHeight = canvas.getHeight();
         int deltaY = canvasHeight / 3;
-        mPaint.setColor(0xff8bc5ba); //ÉèÖÃÑÕÉ«
-        mPaint.setStrokeWidth(5 * mDensity); //ÉèÖÃÏß¿í£¬Èç¹û²»ÉèÖÃÏß¿í£¬ÎÞ·¨»æÖÆµã
+        mPaint.setColor(0xff8bc5ba); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«
+        mPaint.setStrokeWidth(5 * mDensity); //ï¿½ï¿½ï¿½ï¿½ï¿½ß¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß¿ï¿½ï¿½Þ·ï¿½ï¿½ï¿½ï¿½Æµï¿½
         canvas.drawLine(0, 0, canvasWidth, deltaY, mPaint);
 
         float[] pts = {
@@ -407,8 +404,8 @@ public class CanvasView extends View {
     }
     
     private void drawCircle(Canvas canvas){
-        mPaint.setColor(0xff8bc5ba);//ÉèÖÃÑÕÉ«
-        mPaint.setStyle(Paint.Style.FILL);//Ä¬ÈÏ»æÍ¼ÎªÌî³äÄ£Ê½
+        mPaint.setColor(0xff8bc5ba);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«
+        mPaint.setStyle(Paint.Style.FILL);//Ä¬ï¿½Ï»ï¿½Í¼Îªï¿½ï¿½ï¿½Ä£Ê½
         int canvasWidth = canvas.getWidth();
         int canvasHeight = canvas.getHeight();
         int halfCanvasWidth = canvasWidth / 2;
@@ -416,23 +413,23 @@ public class CanvasView extends View {
         int D = canvasHeight / (count + 1);
         int R = D / 2;
 
-        //»æÖÆÔ²
+        //ï¿½ï¿½ï¿½ï¿½Ô²
         canvas.translate(0, D / (count + 1));
         canvas.drawCircle(halfCanvasWidth, R, R, mPaint);
 
-        //Í¨¹ý»æÖÆÁ½¸öÔ²ÐÎ³ÉÔ²»·
-        //1. Ê×ÏÈ»æÖÆ´óÔ²
+        //Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô²ï¿½Î³ï¿½Ô²ï¿½ï¿½
+        //1. ï¿½ï¿½ï¿½È»ï¿½ï¿½Æ´ï¿½Ô²
         canvas.translate(0, D + D / (count + 1));
         canvas.drawCircle(halfCanvasWidth, R, R, mPaint);
-        //2. È»ºó»æÖÆÐ¡Ô²£¬ÈÃÐ¡Ô²¸²¸Ç´óÔ²£¬ÐÎ³ÉÔ²»·Ð§¹û
+        //2. È»ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡Ô²ï¿½ï¿½ï¿½ï¿½Ð¡Ô²ï¿½ï¿½ï¿½Ç´ï¿½Ô²ï¿½ï¿½ï¿½Î³ï¿½Ô²ï¿½ï¿½Ð§ï¿½ï¿½
         int r = (int)(R * 0.75);
-        mPaint.setColor(0xffffffff);//½«»­±ÊÉèÖÃÎª°×É«£¬»­Ð¡Ô²
+        mPaint.setColor(0xffffffff);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½É«ï¿½ï¿½ï¿½ï¿½Ð¡Ô²
         canvas.drawCircle(halfCanvasWidth, R, r, mPaint);
 
-        //Í¨¹ýÏßÌõ»æÍ¼Ä£Ê½»æÖÆÔ²»·
+        //Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼Ä£Ê½ï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½
         canvas.translate(0, D + D / (count + 1));
-        mPaint.setColor(0xff8bc5ba);//ÉèÖÃÑÕÉ«
-        mPaint.setStyle(Paint.Style.STROKE);//»æÍ¼ÎªÏßÌõÄ£Ê½
+        mPaint.setColor(0xff8bc5ba);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«
+        mPaint.setStyle(Paint.Style.STROKE);//ï¿½ï¿½Í¼Îªï¿½ï¿½ï¿½ï¿½Ä£Ê½
         float strokeWidth = (float)(R * 0.25);
         mPaint.setStrokeWidth(strokeWidth);
         canvas.drawCircle(halfCanvasWidth, R, R, mPaint);
@@ -448,27 +445,27 @@ public class CanvasView extends View {
         float bottom= quarter;
         RectF rectF = new RectF(left, top, right, bottom);
 
-        //»æÖÆÍÖÔ²ÐÎÂÖÀªÏß
-        mPaint.setStyle(Paint.Style.STROKE);//ÉèÖÃ»­±ÊÎª»­ÏßÌõÄ£Ê½
-        mPaint.setStrokeWidth(2 * mDensity);//ÉèÖÃÏß¿í
-        mPaint.setColor(0xff8bc5ba);//ÉèÖÃÏßÌõÑÕÉ«
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        mPaint.setStyle(Paint.Style.STROKE);//ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£Ê½
+        mPaint.setStrokeWidth(2 * mDensity);//ï¿½ï¿½ï¿½ï¿½ï¿½ß¿ï¿½
+        mPaint.setColor(0xff8bc5ba);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«
         canvas.translate(0, quarter / 4);
         canvas.drawOval(rectF, mPaint);
 
-        //»æÖÆÍÖÔ²ÐÎÌî³äÃæ
-        mPaint.setStyle(Paint.Style.FILL);//ÉèÖÃ»­±ÊÎªÌî³äÄ£Ê½
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        mPaint.setStyle(Paint.Style.FILL);//ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½Ä£Ê½
         canvas.translate(0, (quarter + quarter / 4));
         canvas.drawOval(rectF, mPaint);
 
-        //»­Á½¸öÍÖÔ²£¬ÐÎ³ÉÂÖÀªÏßºÍÌî³äÉ«²»Í¬µÄÐ§¹û
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½Î³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ßºï¿½ï¿½ï¿½ï¿½É«ï¿½ï¿½Í¬ï¿½ï¿½Ð§ï¿½ï¿½
         canvas.translate(0, (quarter + quarter / 4));
-        //1. Ê×ÏÈ»æÖÆÌî³äÉ«
-        mPaint.setStyle(Paint.Style.FILL);//ÉèÖÃ»­±ÊÎªÌî³äÄ£Ê½
-        canvas.drawOval(rectF, mPaint);//»æÖÆÍÖÔ²ÐÎµÄÌî³äÐ§¹û
-        //2. ½«ÏßÌõÑÕÉ«ÉèÖÃÎªÀ¶É«£¬»æÖÆÂÖÀªÏß
-        mPaint.setStyle(Paint.Style.STROKE);//ÉèÖÃ»­±ÊÎªÏßÌõÄ£Ê½
-        mPaint.setColor(0xff0000ff);//ÉèÖÃÌî³äÉ«ÎªÀ¶É«
-        canvas.drawOval(rectF, mPaint);//ÉèÖÃÍÖÔ²µÄÂÖÀªÏß
+        //1. ï¿½ï¿½ï¿½È»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«
+        mPaint.setStyle(Paint.Style.FILL);//ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½Ä£Ê½
+        canvas.drawOval(rectF, mPaint);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô²ï¿½Îµï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½
+        //2. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½É«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        mPaint.setStyle(Paint.Style.STROKE);//ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½Ä£Ê½
+        mPaint.setColor(0xff0000ff);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«Îªï¿½ï¿½É«
+        canvas.drawOval(rectF, mPaint);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     }
     
     private  void drawArc(Canvas canvas) {
@@ -482,40 +479,40 @@ public class CanvasView extends View {
         float bottom= ovalHeight;
         RectF rectF = new RectF(left, top, right, bottom);
 
-        mPaint.setStrokeWidth(2 * mDensity);//ÉèÖÃÏß¿í
-        mPaint.setColor(0xff8bc5ba);//ÉèÖÃÑÕÉ«
-        mPaint.setStyle(Paint.Style.FILL);//Ä¬ÈÏÉèÖÃ»­±ÊÎªÌî³äÄ£Ê½
+        mPaint.setStrokeWidth(2 * mDensity);//ï¿½ï¿½ï¿½ï¿½ï¿½ß¿ï¿½
+        mPaint.setColor(0xff8bc5ba);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«
+        mPaint.setStyle(Paint.Style.FILL);//Ä¬ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½Ä£Ê½
 
-        //»æÖÆÓÃdrawArc»æÖÆÍêÕûµÄÍÖÔ²
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½drawArcï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô²
         canvas.translate(0, ovalHeight / count);
         canvas.drawArc(rectF, 0, 360, true, mPaint);
 
-        //»æÖÆÍÖÔ²µÄËÄ·ÖÖ®Ò»,ÆðµãÊÇÖÓ±íµÄ3µãÎ»ÖÃ£¬´Ó3µã»æÖÆµ½6µãµÄÎ»ÖÃ
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½Ä·ï¿½Ö®Ò»,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó±ï¿½ï¿½3ï¿½ï¿½Î»ï¿½Ã£ï¿½ï¿½ï¿½3ï¿½ï¿½ï¿½ï¿½Æµï¿½6ï¿½ï¿½ï¿½Î»ï¿½ï¿½
         canvas.translate(0, (ovalHeight + ovalHeight / count));
         canvas.drawArc(rectF, 0, 90, true, mPaint);
         
-        //»æÖÆÍÖÔ²µÄËÄ·ÖÖ®Ò»,½«useCenterÉèÖÃÎªfalse
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½Ä·ï¿½Ö®Ò»,ï¿½ï¿½useCenterï¿½ï¿½ï¿½ï¿½Îªfalse
         canvas.translate(0, (ovalHeight + ovalHeight / count));
         canvas.drawArc(rectF, 0, 90, false, mPaint);
 
 
-        //»æÖÆÍÖÔ²µÄËÄ·ÖÖ®Ò»£¬Ö»»æÖÆÂÖÀªÏß
-        mPaint.setStyle(Paint.Style.STROKE);//ÉèÖÃ»­±ÊÎªÏßÌõÄ£Ê½
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½Ä·ï¿½Ö®Ò»ï¿½ï¿½Ö»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        mPaint.setStyle(Paint.Style.STROKE);//ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½Ä£Ê½
         canvas.translate(0, (ovalHeight + ovalHeight / count));
         canvas.drawArc(rectF, 0, 90, true, mPaint);
 
-        //»æÖÆÍÖÔ²µÄËÄ·ÖÖ®Ò»,½«useCenterÉèÖÃÎªfalse
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½Ä·ï¿½Ö®Ò»,ï¿½ï¿½useCenterï¿½ï¿½ï¿½ï¿½Îªfalse
         canvas.translate(0, (ovalHeight + ovalHeight / count));
         canvas.drawArc(rectF, 0, 90, false, mPaint);
         
-        //»æÖÆ´øÓÐÂÖÀªÏßµÄÍÖÔ²µÄËÄ·ÖÖ®Ò»
-        //1. ÏÈ»æÖÆÍÖÔ²µÄÌî³ä²¿·Ö
-        mPaint.setStyle(Paint.Style.FILL);//ÉèÖÃ»­±ÊÎªÌî³äÄ£Ê½
+        //ï¿½ï¿½ï¿½Æ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ßµï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½Ä·ï¿½Ö®Ò»
+        //1. ï¿½È»ï¿½ï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½ï¿½ä²¿ï¿½ï¿½
+        mPaint.setStyle(Paint.Style.FILL);//ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½Ä£Ê½
         canvas.translate(0, (ovalHeight + ovalHeight / count));
         canvas.drawArc(rectF, 0, 90, true, mPaint);
-        //2. ÔÙ»æÖÆÍÖÔ²µÄÂÖÀªÏß²¿·Ö
-        mPaint.setStyle(Paint.Style.STROKE);//ÉèÖÃ»­±ÊÎªÏßÌõÄ£Ê½
-        mPaint.setColor(0xff0000ff);//ÉèÖÃÂÖÀªÏßÌõÎªÀ¶É«
+        //2. ï¿½Ù»ï¿½ï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß²ï¿½ï¿½ï¿½
+        mPaint.setStyle(Paint.Style.STROKE);//ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½Ä£Ê½
+        mPaint.setColor(0xff0000ff);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½É«
         canvas.drawArc(rectF, 0, 90, true, mPaint);
     }
 
@@ -524,76 +521,76 @@ public class CanvasView extends View {
         int deltaX = canvasWidth / 4;
         int deltaY = (int)(deltaX * 0.75);
 
-        mPaint.setColor(0xff8bc5ba);//ÉèÖÃ»­±ÊÑÕÉ«
-        mPaint.setStrokeWidth(4);//ÉèÖÃÏß¿í
+        mPaint.setColor(0xff8bc5ba);//ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½É«
+        mPaint.setStrokeWidth(4);//ï¿½ï¿½ï¿½ï¿½ï¿½ß¿ï¿½
 
-        /*--------------------------ÓÃPath»­Ìî³äÃæ-----------------------------*/
-        mPaint.setStyle(Paint.Style.FILL);//ÉèÖÃ»­±ÊÎªÌî³äÄ£Ê½
+        /*--------------------------ï¿½ï¿½Pathï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-----------------------------*/
+        mPaint.setStyle(Paint.Style.FILL);//ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½Ä£Ê½
         Path path = new Path();
-        //ÏòPathÖÐ¼ÓÈëArc
+        //ï¿½ï¿½Pathï¿½Ð¼ï¿½ï¿½ï¿½Arc
         RectF arcRecF = new RectF(0, 0, deltaX, deltaY);
         path.addArc(arcRecF, 0, 135);
-        //ÏòPathÖÐ¼ÓÈëOval
+        //ï¿½ï¿½Pathï¿½Ð¼ï¿½ï¿½ï¿½Oval
         RectF ovalRecF = new RectF(deltaX, 0, deltaX * 2, deltaY);
         path.addOval(ovalRecF, Path.Direction.CCW);
-        //ÏòPathÖÐÌí¼ÓCircle
+        //ï¿½ï¿½Pathï¿½ï¿½ï¿½ï¿½ï¿½Circle
         path.addCircle((float)(deltaX * 2.5), deltaY / 2, deltaY / 2, Path.Direction.CCW);
-        //ÏòPathÖÐÌí¼ÓRect
+        //ï¿½ï¿½Pathï¿½ï¿½ï¿½ï¿½ï¿½Rect
         RectF rectF = new RectF(deltaX * 3, 0, deltaX * 4, deltaY);
         path.addRect(rectF, Path.Direction.CCW);
         canvas.drawPath(path, mPaint);
 
-        /*--------------------------ÓÃPath»­Ïß--------------------------------*/
-        mPaint.setStyle(Paint.Style.STROKE);//ÉèÖÃ»­±ÊÎªÏßÌõÄ£Ê½
+        /*--------------------------ï¿½ï¿½Pathï¿½ï¿½ï¿½ï¿½--------------------------------*/
+        mPaint.setStyle(Paint.Style.STROKE);//ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½Ä£Ê½
         canvas.translate(0, deltaY * 2);
         Path path2 = path;
         canvas.drawPath(path2, mPaint);
 
-        /*-----------------Ê¹ÓÃlineTo¡¢arcTo¡¢quadTo¡¢cubicTo»­Ïß--------------*/
-        mPaint.setStyle(Paint.Style.STROKE);//ÉèÖÃ»­±ÊÎªÏßÌõÄ£Ê½
+        /*-----------------Ê¹ï¿½ï¿½lineToï¿½ï¿½arcToï¿½ï¿½quadToï¿½ï¿½cubicToï¿½ï¿½ï¿½ï¿½--------------*/
+        mPaint.setStyle(Paint.Style.STROKE);//ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½Ä£Ê½
         canvas.translate(0, deltaY * 2);
         Path path3 = new Path();
-        //ÓÃpointList¼ÇÂ¼²»Í¬µÄpathµÄ¸÷´¦µÄÁ¬½Óµã
+        //ï¿½ï¿½pointListï¿½ï¿½Â¼ï¿½ï¿½Í¬ï¿½ï¿½pathï¿½Ä¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½
         List<Point> pointList = new ArrayList<Point>();
-        //1. µÚÒ»²¿·Ö£¬»æÖÆÏß¶Î
+        //1. ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ö£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß¶ï¿½
         path3.moveTo(0, 0);
-        path3.lineTo(deltaX / 2, 0);//»æÖÆÏß¶Î
+        path3.lineTo(deltaX / 2, 0);//ï¿½ï¿½ï¿½ï¿½ï¿½ß¶ï¿½
         pointList.add(new Point(0, 0));
         pointList.add(new Point(deltaX / 2, 0));
-        //2. µÚ¶þ²¿·Ö£¬»æÖÆÍÖÔ²ÓÒÉÏ½ÇµÄËÄ·ÖÖ®Ò»µÄ»¡Ïß
+        //2. ï¿½Ú¶ï¿½ï¿½ï¿½ï¿½Ö£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½Ï½Çµï¿½ï¿½Ä·ï¿½Ö®Ò»ï¿½Ä»ï¿½ï¿½ï¿½
         RectF arcRecF1 = new RectF(0, 0, deltaX, deltaY);
-        path3.arcTo(arcRecF1, 270, 90);//»æÖÆÔ²»¡
+        path3.arcTo(arcRecF1, 270, 90);//ï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½
         pointList.add(new Point(deltaX, deltaY / 2));
-        //3. µÚÈý²¿·Ö£¬»æÖÆÍÖÔ²×óÏÂ½ÇµÄËÄ·ÖÖ®Ò»µÄ»¡Ïß
-        //×¢Òâ£¬ÎÒÃÇ´Ë´¦µ÷ÓÃÁËpathµÄmoveTo·½·¨£¬½«»­±ÊµÄÒÆ¶¯µ½ÎÒÃÇÏÂÒ»´¦Òª»æÖÆarcµÄÆðµãÉÏ
+        //3. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½Â½Çµï¿½ï¿½Ä·ï¿½Ö®Ò»ï¿½Ä»ï¿½ï¿½ï¿½
+        //×¢ï¿½â£¬ï¿½ï¿½ï¿½Ç´Ë´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½pathï¿½ï¿½moveToï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½arcï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         path3.moveTo(deltaX * 1.5f, deltaY);
         RectF arcRecF2 = new RectF(deltaX, 0, deltaX * 2, deltaY);
-        path3.arcTo(arcRecF2, 90, 90);//»æÖÆÔ²»¡
+        path3.arcTo(arcRecF2, 90, 90);//ï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½
         pointList.add(new Point((int)(deltaX * 1.5), deltaY));
-        //4. µÚËÄ²¿·Ö£¬»æÖÆ¶þ½×±´Èû¶ûÇúÏß
-        //¶þ½×±´Èû¶ûÇúÏßµÄÆðµã¾ÍÊÇµ±Ç°»­±ÊµÄÎ»ÖÃ£¬È»ºóÐèÒªÌí¼ÓÒ»¸ö¿ØÖÆµã£¬ÒÔ¼°Ò»¸öÖÕµã
-        //ÔÙ´ÎÍ¨¹ýµ÷ÓÃpathµÄmoveTo·½·¨£¬ÒÆ¶¯»­±Ê
+        //4. ï¿½ï¿½ï¿½Ä²ï¿½ï¿½Ö£ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½×±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        //ï¿½ï¿½ï¿½×±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ßµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Çµï¿½Ç°ï¿½ï¿½ï¿½Êµï¿½Î»ï¿½Ã£ï¿½È»ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Æµã£¬ï¿½Ô¼ï¿½Ò»ï¿½ï¿½ï¿½Õµï¿½
+        //ï¿½Ù´ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½pathï¿½ï¿½moveToï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½ï¿½
         path3.moveTo(deltaX * 1.5f, deltaY);
-        //»æÖÆ¶þ½×±´Èû¶ûÇúÏß
+        //ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½×±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         path3.quadTo(deltaX * 2, 0, deltaX * 2.5f, deltaY / 2);
         pointList.add(new Point((int)(deltaX * 2.5), deltaY / 2));
-        //5. µÚÎå²¿·Ö£¬»æÖÆÈý½×±´Èû¶ûÇúÏß£¬Èý½×±´Èû¶ûÇúÏßµÄÆðµãÒ²ÊÇµ±Ç°»­±ÊµÄÎ»ÖÃ
-        //ÆäÐèÒªÁ½¸ö¿ØÖÆµã£¬¼´±È¶þ½×±´Èü¶ûÇúÏß¶àÒ»¸ö¿ØÖÆµã£¬×îºóÒ²ÐèÒªÒ»¸öÖÕµã
-        //ÔÙ´ÎÍ¨¹ýµ÷ÓÃpathµÄmoveTo·½·¨£¬ÒÆ¶¯»­±Ê
+        //5. ï¿½ï¿½ï¿½å²¿ï¿½Ö£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß£ï¿½ï¿½ï¿½ï¿½×±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ßµï¿½ï¿½ï¿½ï¿½Ò²ï¿½Çµï¿½Ç°ï¿½ï¿½ï¿½Êµï¿½Î»ï¿½ï¿½
+        //ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æµã£¬ï¿½ï¿½ï¿½È¶ï¿½ï¿½×±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß¶ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Æµã£¬ï¿½ï¿½ï¿½Ò²ï¿½ï¿½ÒªÒ»ï¿½ï¿½ï¿½Õµï¿½
+        //ï¿½Ù´ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½pathï¿½ï¿½moveToï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½ï¿½
         path3.moveTo(deltaX * 2.5f, deltaY / 2);
-        //»æÖÆÈý½×±´Èû¶ûÇúÏß
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         path3.cubicTo(deltaX * 3, 0, deltaX * 3.5f, 0, deltaX * 4, deltaY);
         pointList.add(new Point(deltaX * 4, deltaY));
 
-        //Path×¼±¸¾ÍÐ÷ºó£¬ÕæÕý½«Path»æÖÆµ½CanvasÉÏ
+        //Path×¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Pathï¿½ï¿½ï¿½Æµï¿½Canvasï¿½ï¿½
         canvas.drawPath(path3, mPaint);
 
-        //×îºó»æÖÆPathµÄÁ¬½Óµã£¬·½±ãÎÒÃÇ´ó¼Ò¶Ô±È¹Û²ì
-        mPaint.setStrokeWidth(10);//½«µãµÄstrokeWidthÒªÉèÖÃµÄ±È»­pathÊ±Òª´ó
-        mPaint.setStrokeCap(Paint.Cap.ROUND);//½«µãÉèÖÃÎªÔ²µã×´
-        mPaint.setColor(0xff0000ff);//ÉèÖÃÔ²µãÎªÀ¶É«
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Pathï¿½ï¿½ï¿½ï¿½ï¿½Óµã£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç´ï¿½Ò¶Ô±È¹Û²ï¿½
+        mPaint.setStrokeWidth(10);//ï¿½ï¿½ï¿½ï¿½ï¿½strokeWidthÒªï¿½ï¿½ï¿½ÃµÄ±È»ï¿½pathÊ±Òªï¿½ï¿½
+        mPaint.setStrokeCap(Paint.Cap.ROUND);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÎªÔ²ï¿½ï¿½×´
+        mPaint.setColor(0xff0000ff);//ï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½Îªï¿½ï¿½É«
         for(Point p : pointList){
-            //±éÀúpointList£¬»æÖÆÁ¬½Óµã
+            //ï¿½ï¿½ï¿½ï¿½pointListï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½
             canvas.drawPoint(p.x, p.y, mPaint);
         }
     }
@@ -606,9 +603,9 @@ public class CanvasView extends View {
 
         canvas.drawBitmap(bitmap, 0, 0, mPaint);
 
-        //»æÖÆBitmapµÄÒ»²¿·Ö£¬²¢¶ÔÆäÀ­Éì
-        //srcRect¶¨ÒåÁËÒª»æÖÆBitmapµÄÄÄÒ»²¿·Ö
-        //srcRectÖÐleft¡¢top¡¢right¡¢bottomµÄÖµ¶¼ÊÇÒÔBitmap±¾ÉíµÄ¾Ö²¿×ø±êÏµÎª»ù´¡µÄ¡£
+        //ï¿½ï¿½ï¿½ï¿½Bitmapï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ö£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        //srcRectï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½Bitmapï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½
+        //srcRectï¿½ï¿½leftï¿½ï¿½topï¿½ï¿½rightï¿½ï¿½bottomï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Bitmapï¿½ï¿½ï¿½ï¿½Ä¾Ö²ï¿½ï¿½ï¿½ï¿½ï¿½ÏµÎªï¿½ï¿½ï¿½ï¿½ï¿½Ä¡ï¿½
         Rect srcRect = new Rect();
         srcRect.left = 0;
         srcRect.right = bitmap.getWidth();
@@ -616,7 +613,7 @@ public class CanvasView extends View {
         srcRect.bottom = (int)(0.33 * bitmap.getHeight());
         float radio = (float)(srcRect.bottom - srcRect.top)  / bitmap.getWidth();
         
-        //dstRecF¶¨ÒåÁËÒª½«»æÖÆµÄBitmapÀ­Éìµ½ÄÄÀï
+        //dstRecFï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½Æµï¿½Bitmapï¿½ï¿½ï¿½ìµ½ï¿½ï¿½ï¿½ï¿½
         RectF dstRecF = new RectF();
         dstRecF.left = 0;
         dstRecF.right = canvas.getWidth();
