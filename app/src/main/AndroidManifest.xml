@@ -205,6 +205,8 @@
 
 		<activity android:name="com.example.activity.SecondActivity" />
 
+		<activity android:name="com.example.app.LayoutActivity" />
+
 
 		<service
             android:name="com.example.aidl.MessengerService"
