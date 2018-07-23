@@ -24,19 +24,19 @@ public class SetVideoActivity extends Activity {
         setClear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(SetVideoActivity.this,"待开发~",Toast.LENGTH_SHORT).show();
+                Toast.makeText(SetVideoActivity.this,"clear~",Toast.LENGTH_SHORT).show();
             }
         });
         setFocusMode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(SetVideoActivity.this,"待开发~",Toast.LENGTH_SHORT).show();
+                Toast.makeText(SetVideoActivity.this,"focus~",Toast.LENGTH_SHORT).show();
             }
         });
         setFrameRate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(SetVideoActivity.this,"待开发~",Toast.LENGTH_SHORT).show();
+                Toast.makeText(SetVideoActivity.this,"frame rate~",Toast.LENGTH_SHORT).show();
             }
         });
     }

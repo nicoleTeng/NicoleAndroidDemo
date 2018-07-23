@@ -68,10 +68,7 @@ public class DoubleExposureImageView extends ImageView {
     }
 
 	@Override
-    public boolean onTouchEvent(MotionEvent event) {  // ·µ»Øtrue£¬¼´ÊÂ¼ş±»Ïû·Ñµô£¬²»»áÔÙÍù×Óview´«µİ
-	    // getAction() ¡ª¡ª ·µ»ØpointerµÄindex(ÄÄ¸öÊÖÖ¸) + action code(ÊÂ¼şÀàĞÍ)
-	    // getActionMask() == getAction() & MotionEvent.ACTION_MASK ¡ª¡ª ·µ»Ø action code ÊÂ¼şÀàĞÍ
-	    // getActionIndex() == getAction() & ACTION_POINTER_INDEX_MASK ¡ª¡ª ·µ»ØpointerµÄindex
+    public boolean onTouchEvent(MotionEvent event) {
 	    int action = event.getAction() & MotionEvent.ACTION_MASK;
 	    int index = event.getActionIndex();
 	    int activePointerId = event.getPointerId(index);
@@ -184,8 +181,8 @@ public class DoubleExposureImageView extends ImageView {
         invalidate();
     }
 
-    // Í¨¹ıÑÕÉ«¾ØÕó ColorMatrix ĞŞ¸ÄÁËÔ­Í¼ÏñµÄ RGBA Öµ£¬´Ó¶ø´ïµ½ÁË¸Ä±äÍ¼Æ¬ÑÕÉ«Ğ§¹ûµÄÄ¿µÄ¡£
-    // ÀûÓÃColorFilter ºÍ ColorMatrixColorFilterÀà ºÍ Paint µÄsetColorFilter ¾Í¿ÉÒÔ¸Ä±äÍ¼Æ¬µÄÕ¹Ê¾Ğ§¹û£¨ÑÕÉ«£¬±¥ºÍ¶È£¬¶Ô±È¶ÈµÈ£©
+    // Í¨ï¿½ï¿½ï¿½ï¿½É«ï¿½ï¿½ï¿½ï¿½ ColorMatrix ï¿½Ş¸ï¿½ï¿½ï¿½Ô­Í¼ï¿½ï¿½ï¿½ RGBA Öµï¿½ï¿½ï¿½Ó¶ï¿½ï¿½ïµ½ï¿½Ë¸Ä±ï¿½Í¼Æ¬ï¿½ï¿½É«Ğ§ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½Ä¡ï¿½
+    // ï¿½ï¿½ï¿½ï¿½ColorFilter ï¿½ï¿½ ColorMatrixColorFilterï¿½ï¿½ ï¿½ï¿½ Paint ï¿½ï¿½setColorFilter ï¿½Í¿ï¿½ï¿½Ô¸Ä±ï¿½Í¼Æ¬ï¿½ï¿½Õ¹Ê¾Ğ§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«ï¿½ï¿½ï¿½ï¿½ï¿½Í¶È£ï¿½ï¿½Ô±È¶ÈµÈ£ï¿½
     public void setColorMatrixColorFilter(float alpha, float red, float green, float blue) {
         float mRedFilter = red;  
         float mGreenFilter = green;  
@@ -209,16 +206,16 @@ public class DoubleExposureImageView extends ImageView {
         mPaint.setAlpha(100);
     }
 
-    // PorterDuffColorFilter: ¿ÉÒÔÀà±ÈÓÚPSÀïµÄÍ¼²ã»ìºÏÄ£Ê½
+    // PorterDuffColorFilter: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½PSï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½Ä£Ê½
     private void setPorterDuffColorFilter() {
         mPaint.reset();
-        mPaint.setColorFilter(new PorterDuffColorFilter(Color.GRAY, PorterDuff.Mode.DARKEN)); //±ä°µ
+        mPaint.setColorFilter(new PorterDuffColorFilter(Color.GRAY, PorterDuff.Mode.DARKEN)); //ï¿½ä°µ
         mPaint.setAlpha(100);
     }
 
     private void setPorterDuffColorFilter2() {
         mPaint.reset();
-        mPaint.setColorFilter(new PorterDuffColorFilter(Color.RED, PorterDuff.Mode.LIGHTEN)); //±ä°µ
+        mPaint.setColorFilter(new PorterDuffColorFilter(Color.RED, PorterDuff.Mode.LIGHTEN)); //ï¿½ä°µ
         mPaint.setAlpha(100);
     }
 
@@ -256,21 +253,21 @@ public class DoubleExposureImageView extends ImageView {
         return bmOut;
     }
 }
-//setDither(boolean dither):·À¶¶¶¯£¬Õâ¸öÊôĞÔµÄĞèÇó³¡¾°Ö÷Òª³öÏÖÔÚ»æÖÆ½¥±äÉ«²Ê»òº¬½¥±äµÄÍ¼Æ¬Ê±£¬android¶Ô²»º¬alphaÍ¨µÀµÄÍ¼Æ¬»á½øĞĞÒ»¸ö×ª»¯£¬
-//³ÉÎªRGB565 ¸ñÊ½µÄ£¬ÕâÖÖ¸ñÊ½Õ¼ÓÃÄÚ´æĞ¡£¬µ«ÒòÎªÈç´Ë£¬¾Í»á³öÏÖÌÖÑáµÄ¡°É«´ø¡±Çé¾°£¬ÈÃÈË¸Ğ¾õ¹ı¶ÉµÄ²»ÊÇÄÇÃ´ÈáºÍ£¬Õë¶ÔÕâ¸öÎÊÌâ£¬androidÌá³öÁË
-//·À¶¶¶¯£¬Ëü»á½«Ô­Ê¼ÑÕÉ«µÄ¹ı¶É´¦¸ù¾İÁ½±ßµÄÉ«Öµ½øĞĞÒ»Ğ©¸Ä±ä£¬´Ó¶øÈÃÑÕÉ«¹ı¶É¸ü¼ÓµÄÈáºÍ£¬ÈÃÈË¾õµÃÊÇÆ½»¬µÄ¹ı¶É£»
+//setDither(boolean dither):ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôµï¿½ï¿½ï¿½ï¿½ó³¡¾ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½Ú»ï¿½ï¿½Æ½ï¿½ï¿½ï¿½É«ï¿½Ê»òº¬½ï¿½ï¿½ï¿½ï¿½Í¼Æ¬Ê±ï¿½ï¿½androidï¿½Ô²ï¿½ï¿½ï¿½alphaÍ¨ï¿½ï¿½ï¿½ï¿½Í¼Æ¬ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½
+//ï¿½ï¿½ÎªRGB565 ï¿½ï¿½Ê½ï¿½Ä£ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½Ê½Õ¼ï¿½ï¿½ï¿½Ú´ï¿½Ğ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½Ë£ï¿½ï¿½Í»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¡ï¿½É«ï¿½ï¿½ï¿½ï¿½ï¿½é¾°ï¿½ï¿½ï¿½ï¿½ï¿½Ë¸Ğ¾ï¿½ï¿½ï¿½ï¿½ÉµÄ²ï¿½ï¿½ï¿½ï¿½ï¿½Ã´ï¿½ï¿½Í£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â£¬androidï¿½ï¿½ï¿½ï¿½ï¿½
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á½«Ô­Ê¼ï¿½ï¿½É«ï¿½Ä¹ï¿½ï¿½É´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ßµï¿½É«Öµï¿½ï¿½ï¿½ï¿½Ò»Ğ©ï¿½Ä±ä£¬ï¿½Ó¶ï¿½ï¿½ï¿½ï¿½ï¿½É«ï¿½ï¿½ï¿½É¸ï¿½ï¿½Óµï¿½ï¿½ï¿½Í£ï¿½ï¿½ï¿½ï¿½Ë¾ï¿½ï¿½ï¿½ï¿½ï¿½Æ½ï¿½ï¿½ï¿½Ä¹ï¿½ï¿½É£ï¿½
 
-//setFilterBitmap(boolean filter):Èç¹û¸ÃÏîÉèÖÃÎªtrue£¬Ôò¶ÔBitmapÍ¼ÏñµÄ½øĞĞÂË²¨´¦Àí£¬¿¹¾â³İ
+//setFilterBitmap(boolean filter):ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªtrueï¿½ï¿½ï¿½ï¿½ï¿½BitmapÍ¼ï¿½ï¿½Ä½ï¿½ï¿½ï¿½ï¿½Ë²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-//setFlags(int flags):¿ÉÒÔÓÃÀ´¸øPaintÉèÖÃÀïÃæ¶¨ÒåºÃµÄÒ»Ğ©ÊôĞÔ£¬Èç¿¹¾â³İ£¬·À¶¶¶¯µÈ£»
+//setFlags(int flags):ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Paintï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æ¶¨ï¿½ï¿½Ãµï¿½Ò»Ğ©ï¿½ï¿½ï¿½Ô£ï¿½ï¿½ç¿¹ï¿½ï¿½İ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ï¿½
 
-//setMaskFilter(MaskFilter maskFilter):ÉèÖÃ»æÖÆÊ±Í¼Æ¬±ßÔµĞ§¹û£¬¿ÉÒÔÓĞÄ£ºıºÍ¸¡µñ£»
-//MaskFilterÀà¿ÉÒÔÎªPaint·ÖÅä±ßÔµĞ§¹û¡£
-//       ¶ÔMaskFilterµÄÀ©Õ¹¿ÉÒÔ¶ÔÒ»¸öPaint±ßÔµµÄalphaÍ¨µÀÓ¦ÓÃ×ª»»¡£Android°üº¬ÁËÏÂÃæ¼¸ÖÖMaskFilter:
-//        BlurMaskFilter   Ö¸¶¨ÁËÒ»¸öÄ£ºıµÄÑùÊ½ºÍ°ë¾¶À´´¦ÀíPaintµÄ±ßÔµ£»
-//        EmbossMaskFilter  Ö¸¶¨ÁË¹âÔ´µÄ·½ÏòºÍ»·¾³¹âÇ¿¶ÈÀ´Ìí¼Ó¸¡µñĞ§¹û£»
+//setMaskFilter(MaskFilter maskFilter):ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½Ê±Í¼Æ¬ï¿½ï¿½ÔµĞ§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½Í¸ï¿½ï¿½ï¿½
+//MaskFilterï¿½ï¿½ï¿½ï¿½ï¿½ÎªPaintï¿½ï¿½ï¿½ï¿½ï¿½ÔµĞ§ï¿½ï¿½ï¿½ï¿½
+//       ï¿½ï¿½MaskFilterï¿½ï¿½ï¿½ï¿½Õ¹ï¿½ï¿½ï¿½Ô¶ï¿½Ò»ï¿½ï¿½Paintï¿½ï¿½Ôµï¿½ï¿½alphaÍ¨ï¿½ï¿½Ó¦ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½Androidï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æ¼¸ï¿½ï¿½MaskFilter:
+//        BlurMaskFilter   Ö¸ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ä£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ï¿½Í°ë¾¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Paintï¿½Ä±ï¿½Ôµï¿½ï¿½
+//        EmbossMaskFilter  Ö¸ï¿½ï¿½ï¿½Ë¹ï¿½Ô´ï¿½Ä·ï¿½ï¿½ï¿½Í»ï¿½ï¿½ï¿½ï¿½ï¿½Ç¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¸ï¿½ï¿½ï¿½Ğ§ï¿½ï¿½ï¿½ï¿½
 
-//setPathEffect(PathEffect effect):ÊÇÓÃÀ´¿ØÖÆ»æÖÆÂÖÀª(ÏßÌõ)µÄ·½Ê½:
-//Õâ¸öÀà±¾Éí²¢Ã»ÓĞ×öÊ²Ã´ÌØÊâµÄ´¦Àí£¬Ö»ÊÇ¼Ì³ĞÁËObject£¬Í¨³£ÎÒÃÇÊ¹ÓÃµÄÊÇËüµÄ¼¸¸ö×ÓÀà£¬¾ÍÊÇÉÏÃæÍ¼Æ¬ÖĞËùÏÔÊ¾µÄ¡£ÔÚÊ¹ÓÃµÄÊ±ºò£¬Í¨³£ÊÇ
-//PathEffect pe = new Ò»¸ö¾ßÌåµÄ×ÓÀà;
-//È»ºóÊ¹ÓÃPaintµÄsetPathEffect(PathEffect pe)·½·¨¼´¿É¡£
+//setPathEffect(PathEffect effect):ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½)ï¿½Ä·ï¿½Ê½:
+//ï¿½ï¿½ï¿½ï¿½à±¾ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½Ê²Ã´ï¿½ï¿½ï¿½ï¿½Ä´ï¿½ï¿½ï¿½Ö»ï¿½Ç¼Ì³ï¿½ï¿½ï¿½Objectï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½à£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼Æ¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½Ä¡ï¿½ï¿½ï¿½Ê¹ï¿½Ãµï¿½Ê±ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½
+//PathEffect pe = new Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½;
+//È»ï¿½ï¿½Ê¹ï¿½ï¿½Paintï¿½ï¿½setPathEffect(PathEffect pe)ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¡ï¿½

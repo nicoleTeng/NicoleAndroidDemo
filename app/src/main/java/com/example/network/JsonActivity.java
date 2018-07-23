@@ -33,38 +33,20 @@ public class JsonActivity extends Activity {
     }
     
     private void test() {
-        Person person = new Person(1, "xiaoluo", "广州");
-        //将Person对象转换成一个json类型的字符串对象
+        Person person = new Person(1, "xiaoluo", "shenzhen");
         String personString = JsonTools.getJsonString("person", person);
         Log.v(TAG, "txh personString = " + personString.toString());
-        
-        
-        /*JSONObject jsonObject = JsonTools.getJsonObject("person", person);
-        //通过JSONObject的toBean方法可以将json对象转换成一个javabean
-        try {
-            JSONObject personObject = jsonObject.getJSONObject("person");
-            Person person2 = (Person) JSONObject.toBean(personObject, Person.class);
-            Log.v(TAG, "txh person = " + person2);
-        } catch (JSONException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }*/
     }
     
     public void testPersonsJson() {
         List<Person> persons = new ArrayList<Person>();
-        Person person = new Person(1, "xiaoluo", "广州");
-        Person person2 = new Person(2, "android", "上海");
+        Person person = new Person(1, "xiaoluo", "锟斤拷锟斤拷");
+        Person person2 = new Person(2, "android", "锟较猴拷");
         persons.add(person);
         persons.add(person2);
         String personsString = JsonTools.getJsonString("persons", persons);
         Log.v(TAG, "txh personString = " + personsString);
-        
-        //JSONObject jsonObject = JsonTools.getJsonObject("persons", persons);
-        //    List<Person>相当于一个JSONArray对象
-        //JSONArray personsArray = (JSONArray)jsonObject.getJSONArray("persons");
-        //List<Person> persons2 = (List<Person>) personsArray.toCollection(personsArray, Person.class);
-        //System.out.println(persons2);
+
     }
     
     public void testMapJson() {

@@ -28,7 +28,6 @@ public class BookManagerService extends Service {
         @Override
         public List<Book> getBookList() throws RemoteException {
             Log.v(TAG, "txh getBookList, thread = " + Thread.currentThread().getName());
-            // ÈÃ¿Í»§¶ËANR
             //SystemClock.sleep(5000); 
             return mBookList;
         }
@@ -70,7 +69,7 @@ public class BookManagerService extends Service {
 
 	@Override
 	public IBinder onBind(Intent arg0) {
-		// ÑéÖ¤¿Í»§¶ËÉí·Ý
+		// ï¿½ï¿½Ö¤ï¿½Í»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	    int check = checkCallingOrSelfPermission("com.example.aidl.permission.ACCESS_BOOK_SERVICE");
 	    Log.v(TAG, "txh onBind, check = " + check);
 	    if (check == PackageManager.PERMISSION_DENIED) {

@@ -42,7 +42,7 @@ public class ImageLoader {
     
     private static final int TAG_KEY_URI = R.id.imageview1;
     private static final int DISK_CACHE_SIZE = 1024 * 1024 * 50; // 50M
-    private static final int IO_BUFFER_SIZE = 8 * 1024; // 8M
+    private static final int IO_BUFFER_SIZE = 8 * 1024; // 8K
     private static final int DISK_CACHE_INDEX = 0; // 8M
     private boolean mIsDiskLruCacheCreated = false;
 

@@ -53,7 +53,6 @@ public class ThreadActivity extends Activity {
     }
 
     private static Handler mHandler;
-    // 创建线程的方法一：
     class MyThread extends Thread {
         
         @Override
@@ -71,7 +70,6 @@ public class ThreadActivity extends Activity {
         }
     }
     
-    // 创建线程的方法二：
     class MyRunnable implements Runnable {
 
         @Override
@@ -80,7 +78,6 @@ public class ThreadActivity extends Activity {
         }
     }
 
-    // 创建线程的方法三：
     class MyCallable implements Callable<Integer> {
         
         @Override
@@ -115,19 +112,7 @@ public class ThreadActivity extends Activity {
         }  
     }
     
-    /*
-     * AsyncTask虽然提供了cancel(true)方法来停止任务，但是这个方法只是中断了这个线程，并不能真正意思上的停止任务，
-     * 这也是很多人说 AsyncTask的弊端: 极容易造成内存溢出的。
-     * 几种结束任务的间接实现方式：
-     * 1. 判断标志位的办法：
-     * 2. 合理的利用Exception
-     */
     class MyAsyncTask extends AsyncTask<Integer, Void, Boolean> {
-
-        /*
-         * 运行在后台线程
-         * @see android.os.AsyncTask#doInBackground(Params[])
-         */
         @Override
         protected Boolean doInBackground(Integer... params) {
             Log.v(TAG, "txh doInBackground, params = " + params + ", this = " + this);
@@ -148,10 +133,6 @@ public class ThreadActivity extends Activity {
             return true;
         }
         
-        /*
-         * 运行在UI线程，参数为doInBackground返回值
-         * @see android.os.AsyncTask#onPostExecute(java.lang.Object)
-         */
         protected void onPostExecute(Boolean result) {
             if (isCancelled()) {
                 return;
@@ -166,32 +147,26 @@ public class ThreadActivity extends Activity {
     private void doThreadTest(int caseNo) {
         switch (caseNo) {
             case 1: {
-                // 直接用Thread
                 Thread task1 = new MyThread();
                 task1.start();
                 break;
             }
             case 2: {
-                // 方法二：可以给线程命名
                 // new Thread(new MyRunnable(), "Thread 222");
                 Thread task2 = new Thread(new MyRunnable());
                 task2.start();
                 break;
             }
             case 3: {
-                // 方法三：Callable + FutureTask
                 callableFutureTaskThread();
                 break;
             }
             case 4: {
-                // Thread 与 Runnable 的区别：
-                // 每个线程拥有自己的静态变量
-                ThreadLocalTest test1 = new ThreadLocalTest(); 
+                ThreadLocalTest test1 = new ThreadLocalTest();
                 test1.run();
                 break;
             }
             case 5: {
-                // 多个线程共享数据
                 RunnableLocalTest test2 = new RunnableLocalTest();
                 test2.run();
                 break;

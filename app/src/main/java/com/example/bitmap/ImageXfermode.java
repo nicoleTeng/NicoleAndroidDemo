@@ -31,16 +31,16 @@ public class ImageXfermode extends View {
     private Bitmap mBmp = null;
 
     private PorterDuffXfermode[] mXfermodeList = {
-            Xfermode_CLEAR,   // 显示下层，交集部分透明
-            Xfermode_SRC,     // 显示上层绘制图片
-            Xfermode_DST,     // 显示下层绘制图片
-            Xfermode_SRC_IN,  // 取两层绘制交集。显示上层
-            Xfermode_SRC_OUT, // 取上层绘制非交集部分
-            Xfermode_XOR,     // 异或：去除两图层交集部分
-            Xfermode_DST_IN,  // 取两图绘制交集，显示下层
-            Xfermode_DST_OUT, // 取下层绘制非交集部分
-            Xfermode_MULTIPLY,// 取两图层交集部分叠加后颜色
-            Xfermode_SCREEN   // 取两图层全部区域，交集部分变为透明色
+            Xfermode_CLEAR,
+            Xfermode_SRC,
+            Xfermode_DST,
+            Xfermode_SRC_IN,
+            Xfermode_SRC_OUT,
+            Xfermode_XOR,
+            Xfermode_DST_IN,
+            Xfermode_DST_OUT,
+            Xfermode_MULTIPLY,
+            Xfermode_SCREEN
     };
     
     private PorterDuffXfermode mCurrentXfermode = mXfermodeList[0];
@@ -59,7 +59,7 @@ public class ImageXfermode extends View {
     }
     
     private void drawXfermode(Canvas canvas) {
-        // 设置背景色
+        // 锟斤拷锟矫憋拷锟斤拷色
         canvas.drawARGB(255, 139, 197, 186);
 
         int canvasWidth = canvas.getWidth();
@@ -67,16 +67,16 @@ public class ImageXfermode extends View {
         int r = canvasWidth / 3;
 
         int layerId = canvas.saveLayer(0, 0, canvasWidth, canvasHeight, null, Canvas.ALL_SAVE_FLAG);
-        // 绘制黄色的圆形
+        // 锟斤拷锟狡伙拷色锟斤拷圆锟斤拷
         Paint paint = new Paint();
         paint.setColor(0xFFFFCC44);
         canvas.drawCircle(r, r, r, paint);
 
-        // 绘制蓝色的矩形
+        // 锟斤拷锟斤拷锟斤拷色锟侥撅拷锟斤拷
         paint.setXfermode(mCurrentXfermode);
         paint.setColor(0xFF66AAFF);
         canvas.drawRect(r, r, r * 2.7f, r * 2.7f, paint);
-        // 最后将画笔去除Xfermode
+        // 锟斤拷蠼锟斤拷锟饺ワ拷锟絏fermode
         paint.setXfermode(null);
 
         canvas.restoreToCount(layerId);        
@@ -104,7 +104,7 @@ public class ImageXfermode extends View {
         canvas.restore();
 
         canvas.save();
-        //截取canvas的某个矩形区域
+        //锟斤拷取canvas锟斤拷某锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷
         canvas.clipRect(30, 30, width / 2, height / 2);
         //canvas.drawBitmap(mBmp, width, height, mPaint);
 

@@ -185,9 +185,9 @@ public class AsyncTaskActivity extends Activity implements View.OnClickListener 
                     if (editor != null) {
                         OutputStream outputStream = editor.newOutputStream(0);
                         if (downloadUrlToStream(imageUrl, outputStream)) {
-                            editor.commit(); // 提交写入操作
+                            editor.commit();
                         } else {
-                            editor.abort(); // 发生异常时回退整个操作
+                            editor.abort();
                         }
                     }
                     mDiskLruCache.flush();

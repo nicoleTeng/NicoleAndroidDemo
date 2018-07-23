@@ -84,7 +84,7 @@ public class VideoRecordActivity extends Activity implements SurfaceHolder.Callb
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "txh setting");
-                Toast.makeText(VideoRecordActivity.this, "设置待开发...",Toast.LENGTH_SHORT).show();
+                Toast.makeText(VideoRecordActivity.this, "set...",Toast.LENGTH_SHORT).show();
             }
         });
         mBtnShowFile.setOnClickListener(new View.OnClickListener() {
@@ -182,21 +182,17 @@ public class VideoRecordActivity extends Activity implements SurfaceHolder.Callb
         
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
-        // 选择支持半透明模式,在有SurfaceView的activity中使用。
         getWindow().setFormat(PixelFormat.TRANSLUCENT);
     }
 
-    /**
-     * 获取系统时间
-     */
     public static String getDate(){
         Calendar ca = Calendar.getInstance();
-        int year = ca.get(Calendar.YEAR);           // 获取年份
-        int month = ca.get(Calendar.MONTH);         // 获取月份
-        int day = ca.get(Calendar.DATE);            // 获取日
-        int minute = ca.get(Calendar.MINUTE);       // 分
-        int hour = ca.get(Calendar.HOUR);           // 小时
-        int second = ca.get(Calendar.SECOND);       // 秒
+        int year = ca.get(Calendar.YEAR);
+        int month = ca.get(Calendar.MONTH);
+        int day = ca.get(Calendar.DATE);
+        int minute = ca.get(Calendar.MINUTE);
+        int hour = ca.get(Calendar.HOUR);
+        int second = ca.get(Calendar.SECOND);
 
         String date = "" + year + (month + 1 )+ day + hour + minute + second;
         Log.d(TAG, "txh date:" + date);
@@ -204,15 +200,12 @@ public class VideoRecordActivity extends Activity implements SurfaceHolder.Callb
         return date;
     }
 
-    /**
-     * 获取SD path
-     */
     public String getSDPath() {
         File sdDir;
         boolean sdCardExist = Environment.getExternalStorageState()
-                .equals(android.os.Environment.MEDIA_MOUNTED); // 判断sd卡是否存在
+                .equals(android.os.Environment.MEDIA_MOUNTED);
         if (sdCardExist) {
-            sdDir = Environment.getExternalStorageDirectory();// 获取外部存储的根目录
+            sdDir = Environment.getExternalStorageDirectory();
             return sdDir.toString();
         }
 
@@ -237,17 +230,16 @@ public class VideoRecordActivity extends Activity implements SurfaceHolder.Callb
             mCamera.setPreviewDisplay(holder);
             mCamera.startPreview();
 
-            //下面这个方法能帮我们获取到相机预览帧，我们可以在这里实时地处理每一帧
             mCamera.setPreviewCallback(new Camera.PreviewCallback() {
                 @Override
                 public void onPreviewFrame(byte[] data, Camera camera) {
-                    Log.i(TAG, "txh get preview frame 获取预览帧...");
+                    Log.i(TAG, "txh get preview frame...");
                     new ProcessFrameAsyncTask().execute(data);
-                    Log.d(TAG, "txh preview frame size 预览帧大小：" + String.valueOf(data.length));
+                    Log.d(TAG, "txh preview frame size " + String.valueOf(data.length));
                 }
             });
         } catch (IOException e) {
-            Log.d(TAG, "txh set camera preview failed 设置相机预览失败", e);
+            Log.d(TAG, "txh set camera preview failed ", e);
             e.printStackTrace();
         }
     }
@@ -276,10 +268,8 @@ public class VideoRecordActivity extends Activity implements SurfaceHolder.Callb
         }
 
         private void processFrame(byte[] frameData) {
-            Log.i(TAG, "txh processFrame 正在处理预览帧...");
-            Log.i(TAG, "txh frame size 预览帧大小"+String.valueOf(frameData.length));
-            Log.i(TAG, "txh 预览帧处理完毕...");
-            //下面这段注释掉的代码是把预览帧数据输出到sd卡中，以.yuv格式保存
+            Log.i(TAG, "txh processFrame...");
+            Log.i(TAG, "txh frame size "+String.valueOf(frameData.length));
 //            String path = getSDPath();
 //            File dir = new File(path + "/FrameTest");
 //            if (!dir.exists()) {
@@ -291,7 +281,6 @@ public class VideoRecordActivity extends Activity implements SurfaceHolder.Callb
 //                FileOutputStream fileOutputStream=new FileOutputStream(file);
 //                BufferedOutputStream bufferedOutputStream=new BufferedOutputStream(fileOutputStream);
 //                bufferedOutputStream.write(frameData);
-//                Log.i(TAG, "预览帧处理完毕...");
 //
 //            } catch (FileNotFoundException e) {
 //                e.printStackTrace();

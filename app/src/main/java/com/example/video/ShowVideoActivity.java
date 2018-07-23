@@ -39,16 +39,14 @@ public class ShowVideoActivity extends Activity {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Uri uri = Uri.parse(Environment.getExternalStorageDirectory().getPath()+"/VideoRecorderTest/"+FileToStr(videoList)[position]);//调用系统自带的播放器
+                Uri uri = Uri.parse(Environment.getExternalStorageDirectory().getPath()+"/VideoRecorderTest/"+FileToStr(videoList)[position]);
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setDataAndType(uri, "video/*");
                 startActivity(intent);
             }
         });
     }
-    /**
-     * 把文件列表转换成字符串
-     */
+
     public String[] FileToStr( List<File> f ){
         ArrayList<String> listStr = new ArrayList<String>();
         int i;
@@ -58,9 +56,7 @@ public class ShowVideoActivity extends Activity {
         }
         return listStr.toArray(new String[0]);
     }
-    /**
-     * 获取文件列表
-     */
+
     public void GetFiles(  ){
         int i=0;
         File filePath=new File(Environment.getExternalStorageDirectory().getPath()+"/VideoRecorderTest");
@@ -73,18 +69,16 @@ public class ShowVideoActivity extends Activity {
                     }
                 }
             }else{
-                Toast.makeText(ShowVideoActivity.this,"目前文件夹还没有文件",Toast.LENGTH_SHORT).show();
+                Toast.makeText(ShowVideoActivity.this,"hello",Toast.LENGTH_SHORT).show();
             }
         }
         items = new ArrayList<Map<String,Object>>();
         for (int j = 0; j <i; j++) {
             Map<String, Object> item = new HashMap<String, Object>();
-            item.put("imageItem", R.drawable.folder);//添加图像资源的ID
+            item.put("imageItem", R.drawable.folder);
             item.put("textItem",FileToStr(videoList)[j]);
             items.add(item);
         }
-
-
     }
 
 }

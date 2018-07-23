@@ -7,8 +7,7 @@ import android.util.Log;
 public class ThreadLocalTest {
     private static final String TAG = "ThreadLocalTest";
 
-    // 利用扩展Thread类创建的多个线程，虽然执行的是相同的代码，但彼此相互独立，且各自拥有自己的资源，互不干扰
-    static ThreadLocal<HashMap> mMap = new ThreadLocal<HashMap>() { 
+    static ThreadLocal<HashMap> mMap = new ThreadLocal<HashMap>() {
         
         @Override 
         protected HashMap initialValue() {

@@ -49,7 +49,6 @@ public class MoveImageView extends ImageView {
     public void scrollViewByCusom(int destX, int destY) {
         int scrollX = getScrollX();
         int deltaX = destX - scrollX;
-        // 1000ms内滑向destX，效果就是慢慢滑动
         mScroller.startScroll(scrollX, 0, deltaX, 0, 1000);
         invalidate();
     }

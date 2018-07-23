@@ -10,9 +10,6 @@ import android.util.Log;
 
 import com.example.nicole.R;
 
-/**
- * 程序说明：UI Thread 通过handler向其他线程发送数据并进行打印
- */
 public class HandlerThreadActivity extends Activity implements Handler.Callback {
     private static final String TAG = "HandlerThreadActivity";
     private Handler superHandler;
@@ -29,8 +26,6 @@ public class HandlerThreadActivity extends Activity implements Handler.Callback 
         HandlerThread handlerThread = new HandlerThread("test");
         handlerThread.start();
 
-        /* 将handlerThread中创建的looper传递给Handler。
-         * 也就意味着该Handler收到Message后，程序在HandlerThread创建的线程中运行  */
         superHandler = new Handler(handlerThread.getLooper()) {
             @Override
             public void handleMessage(Message msg) {
