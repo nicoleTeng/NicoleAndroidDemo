@@ -68,7 +68,8 @@ public class MainActivity extends ListActivity {
         "MessengerActivity",
         "RecyclerActivity",
         "Custom View",
-        "Animation"
+        "Animation",
+        "AsyncTimerActivity"
     };
     
     static final Class<?>[] activities = {
@@ -101,7 +102,8 @@ public class MainActivity extends ListActivity {
         MessengerActivity.class,
         RecyclerActivity.class,
         CustomViewActivity.class,
-        AnimationActivity.class
+        AnimationActivity.class,
+        AsyncTimerActivity.class
     };
 
     @Override

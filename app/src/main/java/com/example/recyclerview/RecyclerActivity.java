@@ -29,6 +29,7 @@ public class RecyclerActivity extends Activity implements MyAdapter.OnChildClick
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler);
+        getWindow().setBackgroundDrawable(null);
         List<String> list = new ArrayList<>();
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view_id);
 

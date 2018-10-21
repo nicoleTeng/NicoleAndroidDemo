@@ -13,8 +13,8 @@ import com.example.nicole.R;
 public class ImageAdapter extends BaseAdapter {
     private static final String TAG = "ImageAdapter";
     private String[] mUrlList = Images.imageThumbUrls;
-    private Context mContext = null;
-    private ImageLoader mImageLoader = null;
+    private Context mContext;
+    private ImageLoader mImageLoader;
     private boolean mIsGridViewIdle = true;
     
     public ImageAdapter(Context context) {
@@ -40,7 +40,7 @@ public class ImageAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ViewHolder holder = null;
+        ViewHolder holder;
         Log.v(TAG, "txh getView, position = " + position + ", convertView = " + convertView);
         if (convertView == null) {
             convertView = LayoutInflater.from(mContext).inflate(R.layout.layout_item,
