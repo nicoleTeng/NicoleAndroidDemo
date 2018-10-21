@@ -115,7 +115,6 @@ public class TCPClientActivity extends Activity implements OnClickListener{
 		}
 		
 		try {
-			// 接受服务器端的消息
 			BufferedReader br = new BufferedReader(new InputStreamReader(
 					socket.getInputStream()));
 			while (!TCPClientActivity.this.isFinishing()) {

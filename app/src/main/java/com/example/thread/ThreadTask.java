@@ -11,12 +11,6 @@ import android.util.Log;
 public abstract class ThreadTask<T> extends Thread {
     private static final String TAG = "ThreadTask";
     private static Handler handler;
-    /**
-     * 受限于硬件、内存和性能，我们不可能无限制的创建任意数量的线程，因为每一台机器允许的最大线程是一个有界值。
-     * 也就是说ThreadPoolExecutor管理的线程数量是有界的。线程池就是用这些有限个数的线程，去执行提交的任务。
-     * 
-     * 线程池，newFixedThreadPool()创建固定大小的线程池，可控制线程最大并发数，超出的线程会在队列中等待。
-     */
     private static ExecutorService executorService = Executors.newFixedThreadPool(4);
 
     public ThreadTask() {
@@ -37,9 +31,6 @@ public abstract class ThreadTask<T> extends Thread {
         }
     }
     
-    /*
-     * handler优化：单例模式，保证handler只有一个实例
-     */
     private Handler getHandler() {
         if (handler == null) {
             synchronized(MHandler.class) {
@@ -50,9 +41,6 @@ public abstract class ThreadTask<T> extends Thread {
     }
 
     public void doWork() {
-        /*
-         * 线程池优化：避免不断创建线程
-         */
         executorService.execute(new Runnable() {
             
             @Override
@@ -76,14 +64,9 @@ public abstract class ThreadTask<T> extends Thread {
     
     public void excute() {
         onStart();
-        //start();  // 会回调Thread.run方法,run方法运行在一个新线程中
         doWork();
     }
     
-    /**
-     * handler发送数据的实体
-     * @param <Data>
-     */
     private static class ResultData<T> {
         ThreadTask threadTask ;
         T data ;

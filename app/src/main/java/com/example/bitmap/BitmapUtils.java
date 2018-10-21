@@ -146,12 +146,10 @@ public class BitmapUtils {
         final int height = options.outHeight;
         final int width = options.outWidth;
         int inSampleSize = 1;
-        
-        // 原始图片比较大的情况,如果原始比较小，则inSampleSize=1会将原始图片放大2倍  
+
         if (width > reqWidth || height > reqHeight) {  
             final int halfWidth = width / 2;  
-            final int halfHeight = height / 2;  
-            // 计算出最大的inSampleSize的值（2的幂），并保持图片宽高比请求的宽高大。  
+            final int halfHeight = height / 2;
             while ((halfWidth / inSampleSize) >= reqWidth
                     && (halfHeight / inSampleSize) >= reqHeight) {  
                 inSampleSize *= 2;

@@ -8,6 +8,9 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.util.Log;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.RequestOptions;
 import com.example.nicole.R;
 
 public class ImageAdapter extends BaseAdapter {
@@ -16,6 +19,7 @@ public class ImageAdapter extends BaseAdapter {
     private Context mContext;
     private ImageLoader mImageLoader;
     private boolean mIsGridViewIdle = true;
+    private boolean mUseGlide = true;
     
     public ImageAdapter(Context context) {
         mContext = context;
@@ -52,16 +56,29 @@ public class ImageAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
         ImageView imageView = holder.imageView;
-        final String tag = (String) imageView.getTag();
         final String url = getItem(position);
-        if (!url.equals(tag)) {
-            imageView.setImageResource(R.drawable.ic_launcher);
+        if (mUseGlide) {
+            RequestOptions options = new RequestOptions()
+                    //.placeholder(R.drawable.ic_launcher) // use a default bitmap
+                    //.skipMemoryCache(true)    // do not use memory cache
+                    //.diskCacheStrategy(DiskCacheStrategy.NONE)  // do not use disk cache
+                    .circleCrop();  // get a circle crop bitmap
+            Glide.with(mContext)
+                    //.asBitmap()     make gif to a static picture
+                    .load(url)
+                    .apply(options)
+                    .into(imageView);
+        } else {
+            final String tag = (String) imageView.getTag();
+            if (!url.equals(tag)) {
+                imageView.setImageResource(R.drawable.ic_launcher);
+            }
+            if (mIsGridViewIdle) {
+                imageView.setTag(url);
+                mImageLoader.bindBitmap(url, imageView, 115, 115);
+            }
         }
-        if (mIsGridViewIdle) {
-            imageView.setTag(url);
-            mImageLoader.bindBitmap(url, imageView, 115, 115);
-        }
-        
+
         return convertView;
     }
 

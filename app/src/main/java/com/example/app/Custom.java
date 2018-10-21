@@ -15,13 +15,11 @@ public class Custom implements Parcelable {
 		mIsMale = isMale;
 	}
 
-	// 内容描述
 	@Override
 	public int describeContents() {
 		return 0;
 	}
 
-	// 序列化
 	@Override
 	public void writeToParcel(Parcel out, int flags) {
 		out.writeInt(mCustomId);
@@ -30,8 +28,7 @@ public class Custom implements Parcelable {
 		//out.writeParcelable(mBook, 0);
 	}
 
-	// 反序列化
-	public static final Parcelable.Creator<Custom> CREATOR = 
+	public static final Parcelable.Creator<Custom> CREATOR =
 			new Parcelable.Creator<Custom>() {
 
 				@Override

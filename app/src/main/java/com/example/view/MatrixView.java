@@ -65,20 +65,20 @@ public class MatrixView extends View {
     }
 
     private void doRotate(Canvas canvas) {
-        //mMatrix.setRotate(15); // 以(0,0)为中心旋转
-        mMatrix.setRotate(15, mBitmap.getWidth() / 2, mBitmap.getHeight() / 2); // 以bitmap中心旋转
+        //mMatrix.setRotate(15);
+        mMatrix.setRotate(15, mBitmap.getWidth() / 2, mBitmap.getHeight() / 2);
         canvas.drawBitmap(mBitmap, mMatrix, null);
     }
 
     private void doScale(Canvas canvas) {
-        //mMatrix.setScale(0.5f, 0.5f); // 以(0,0)为中心缩放
-        mMatrix.setScale(0.5f, 0.5f, mBitmap.getWidth() / 2, mBitmap.getHeight() / 2); // 以bitmap中心缩放
+        //mMatrix.setScale(0.5f, 0.5f);
+        mMatrix.setScale(0.5f, 0.5f, mBitmap.getWidth() / 2, mBitmap.getHeight() / 2);
         canvas.drawBitmap(mBitmap, mMatrix, null);
     }
 
     private void doSkew(Canvas canvas) {
-        //mMatrix.setSkew(0.25f, 0.25f); // 以(0,0)为中心错切
-        mMatrix.setSkew(0.25f, 0.25f, mBitmap.getWidth() / 2, mBitmap.getHeight() / 2); // 以bitmap中心错切
+        //mMatrix.setSkew(0.25f, 0.25f);
+        mMatrix.setSkew(0.25f, 0.25f, mBitmap.getWidth() / 2, mBitmap.getHeight() / 2);
         canvas.drawBitmap(mBitmap, mMatrix, null);
     }
     
@@ -94,7 +94,6 @@ public class MatrixView extends View {
         canvas.drawBitmap(mBitmap, mMatrix, null);
     }
     
-    //这个方法非常强大，通过改变参数，除了可以实现平移，旋转，缩放，错切，还可以实现透视
     private void doPolyToPoly(Canvas canvas) {
         mMatrix = new Matrix();
         float bWidth = mBitmap.getWidth();
@@ -102,12 +101,7 @@ public class MatrixView extends View {
         float[] src = {0, 0, 0, bHeight, bWidth, bHeight,bWidth, 0};
         float[] dst = {0 + 150,0, 0, bHeight, bWidth, bHeight, bWidth - 150, 0};
         mMatrix.setPolyToPoly(src, 0, dst, 0, 4);
-        // 上面的方法最后一个参数: 0 不变化
-        //                        1 平移  映射第一个点
-        //                        2 旋转  映射第一二个点
-        //                        3 错切  映射第一二三个点
-        //                        4 透视  映射第一二三四歌点
-        
+
         canvas.drawBitmap(mBitmap, mMatrix, null);
     }
 

@@ -47,9 +47,9 @@ public class DoubleExposureActivity extends Activity implements View.OnClickList
         mSoundPool = new SoundPool(1, AudioManager.STREAM_SYSTEM, 5);
         mSoundID = mSoundPool.load(this, R.raw.wheel_adjuster_tone, 1);
         if (mSoundID == 0) {
-            // 加载失败
+
         } else {
-            // 加载成功   mSoundID == 1
+
         }
 
         mSeekBar.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {

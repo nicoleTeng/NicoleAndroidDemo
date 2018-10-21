@@ -1,23 +1,15 @@
 package com.example.app;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Point;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
-import android.view.VelocityTracker;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.AbsSeekBar;
-import android.widget.SeekBar;
 
 public class VerticalSeekBar extends AbsSeekBar {
 	private static final String TAG = "VerticalSeekBar";
@@ -84,7 +76,7 @@ public class VerticalSeekBar extends AbsSeekBar {
 		// available -= thumbWidth;
 		// available += getThumbOffset() / 2;
 		System.out.println("--available=" + available);
-		int thumbPos = (int) (scale * available);// 以实际进度值为参照
+		int thumbPos = (int) (scale * available);
 		int topBound, bottomBound;
 		if (gap == Integer.MIN_VALUE) {
 			Rect oldBounds = thumb.getBounds();
@@ -94,8 +86,6 @@ public class VerticalSeekBar extends AbsSeekBar {
 			topBound = gap;
 			bottomBound = gap + thumbHeight;
 		}
-		// 由于paddingLeft的宽度刚好为thumb指示图标的一半，所以，进度未0时，
-		// thumb在整个widget的最左边，减去进度条的padding，thumb的中心圆点，刚好在进度条的0处
 		thumb.setBounds(thumbPos, topBound, thumbPos + thumbWidth, bottomBound);
 	}
 
@@ -113,7 +103,7 @@ public class VerticalSeekBar extends AbsSeekBar {
 		//Log.v(TAG, "txh Width=" + drawable.getIntrinsicWidth());
 		width = drawable.getIntrinsicWidth();
 		height = View.MeasureSpec.getSize(heightMeasureSpec);
-		height = 200 + getPaddingLeft() * 2; // 高度为：实际seekbar的有效值（200）+左右Padding
+		height = 200 + getPaddingLeft() * 2;
 		System.out.println("height=" + height + "width=" + width);
 		this.setMeasuredDimension(width, height);
 	}
@@ -163,7 +153,7 @@ public class VerticalSeekBar extends AbsSeekBar {
 		System.out.println("--trackTouchEvent-getHeight=" + getHeight() + "  getPaddingBottom=" + getPaddingBottom() + "  getPaddingLeft=" + getPaddingLeft());
 		final int available = Height - getPaddingLeft() - getPaddingRight();
 		System.out.println("--available=" + available);
-		int Y = (int) event.getY();// 针对widget最边缘左上角
+		int Y = (int) event.getY();
 		float scale;
 		float progress = 0;
 		if (Y > Height - getPaddingRight()) {
@@ -171,7 +161,6 @@ public class VerticalSeekBar extends AbsSeekBar {
 		} else if (Y < getPaddingTop()) {
 			scale = 1.0f;
 		} else {
-			//Height- Y =总高度-触点=相对底部的高度
 			scale = (float) (Height- Y - getPaddingLeft() ) / (float) available;
 		}
 

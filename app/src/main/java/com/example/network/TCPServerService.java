@@ -53,7 +53,6 @@ public class TCPServerService extends Service {
 			Log.v(TAG, "txh run thread = " + Thread.currentThread().getName());
 			ServerSocket serverSocket = null;
 			try {
-				// 监听本地8688端口
 				serverSocket = new ServerSocket(8688);
 			} catch (IOException e) {
 				System.out.println("establish tcp server failed, port:8688");
@@ -63,7 +62,6 @@ public class TCPServerService extends Service {
 			
 			while (!mIsServiceDestoryed) {
 				try {
-					//接受客户端请求
 					final Socket client = serverSocket.accept();
 					System.out.println("accept");
 					new Thread() {
@@ -84,22 +82,19 @@ public class TCPServerService extends Service {
 	}
 	
 	public void responseClient(Socket client) throws IOException {
-		// 用于接收客户端消息
 		Log.v(TAG, "txh responseClient");
 		BufferedReader in = new BufferedReader(new InputStreamReader(
 				client.getInputStream()));
-		// 用于向客户端发送消息
 		PrintWriter out = new PrintWriter(new BufferedWriter(
 				new OutputStreamWriter(client.getOutputStream())), true);
 		out.println("welcome to chat room!");
 		
 		while (!mIsServiceDestoryed) {
 			Log.v(TAG, "txh 0000000000000");
-			String str = in.readLine();   //阻塞
+			String str = in.readLine();
 			Log.v(TAG, "txh 11111111111");
 			System.out.println("msg from client:" + str);
 			if (str == null) {
-				// 客户端断开连接
 				break;
 			}
 			int i = new Random().nextInt(mDefinedMessages.length);
@@ -109,7 +104,6 @@ public class TCPServerService extends Service {
 		}
 		
 		System.out.println("client quit.");
-		// 关闭流
 		out.close();
 		in.close();
 		client.close();

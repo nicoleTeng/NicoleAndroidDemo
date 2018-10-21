@@ -211,7 +211,6 @@ public class DialogActivity extends Activity implements View.OnClickListener {
 		});
 	}
 
-	// 序列化
 	private void userSerialize() {
 		Log.v(TAG, "txh userSerialize");
 		User user = new User(0, "jake", true);
@@ -228,7 +227,6 @@ public class DialogActivity extends Activity implements View.OnClickListener {
 		}
 	}
 
-	// 反序列化
 	private void userDeSerialize() {
 		Log.v(TAG, "txh userDeSerialize");
 		String filePath = Environment.getExternalStorageDirectory().getAbsolutePath();

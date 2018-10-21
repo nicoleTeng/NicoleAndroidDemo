@@ -27,7 +27,7 @@ public class DemoSurfaceView extends SurfaceView implements Callback {
     
     private void init() {
         SurfaceHolder holder = getHolder();  
-        holder.addCallback(this); //设置Surface生命周期回调 
+        holder.addCallback(this);
         thread = new LoopThread(holder, getContext());
     }
     
@@ -56,7 +56,7 @@ public class DemoSurfaceView extends SurfaceView implements Callback {
     }
 
     /** 
-     * 执行绘制的绘制线程 
+     * 执锟叫伙拷锟狡的伙拷锟斤拷锟竭筹拷 
      * @author Administrator 
      */  
     class LoopThread extends Thread {  
@@ -92,7 +92,6 @@ public class DemoSurfaceView extends SurfaceView implements Callback {
                         if (canvas != null) {
                             doDraw(canvas);
                         }
-                        //通过它来控制帧数执行一次绘制后休息50ms
                         Thread.sleep(50);
                     }
                 } catch (InterruptedException e) {
@@ -106,8 +105,7 @@ public class DemoSurfaceView extends SurfaceView implements Callback {
         }  
    
         public void doDraw(Canvas canvas) {  
-            //这个很重要，清屏操作，清楚掉上次绘制的残留图像  
-            canvas.drawColor(Color.BLACK);  
+            canvas.drawColor(Color.BLACK);
    
             canvas.translate(300, 300);  
             canvas.drawCircle(0,0, radius++, paint);  

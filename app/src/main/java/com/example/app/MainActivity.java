@@ -7,6 +7,7 @@ import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.os.Debug;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -34,6 +35,8 @@ import com.example.util.StringUtils;
 import com.example.util.Utils;
 import com.example.video.VideoPlayActivity;
 
+import java.util.HashMap;
+
 public class MainActivity extends ListActivity {
     private static final String TAG = "MainActivity";
     private PowerConnectionReceiver mReceiver = null;
@@ -42,6 +45,7 @@ public class MainActivity extends ListActivity {
         "Action Send intent",
         "Dialog",
         "Second activity",
+        "Layout",
         "Layout Weight",
         "Vertical seekbar",
         "Content provider",
@@ -76,6 +80,7 @@ public class MainActivity extends ListActivity {
         GalleryActivity.class,
         DialogActivity.class,
         SecondActivity.class,
+        LayoutActivity.class,
         LayoutWeightActivity.class,
         VerticalSeekbarActivity.class,
         ProviderActivity.class,
@@ -214,6 +219,12 @@ public class MainActivity extends ListActivity {
         String[] wordB = {"nice", "to", "meet", "you", "too!"};
         String value1 = StringUtils.mergeString(wordA, wordB);
         String value2 = StringUtils.mergeStringWithStringBuilder(wordA, wordB);
+        HashMap map = new HashMap<Integer, String>();
+
+        Debug.startMethodTracing("gallery3d"); //开始，文件保存到 "/sdcard/gallery3d.trace"
+        // ...
+        Debug.stopMethodTracing();    //结束
+
     }
 
     private void registerPowerReceiver() {

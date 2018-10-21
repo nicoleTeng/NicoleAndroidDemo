@@ -43,7 +43,7 @@ public class AnimateView extends View {
             radius = 10f;  
         }  
 
-        invalidate(); //通过调用这个方法让系统自动刷新视图  
+        invalidate();
     }
     
 	@Override
